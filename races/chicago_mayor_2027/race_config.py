@@ -26,32 +26,36 @@ CONFIG = RaceConfig(
     election_date="2027-02-23",  # placeholder — confirm when election is set
 
     # ── Candidates ──────────────────────────────────────────────────────────
-    # TODO: fill in when field is known
-    candidates=["Candidate A", "Candidate B", "Candidate C"],
+    
+    candidates=["Brandon Johnson", "Susan Mendoza", "Alexi Giannoulias"],
 
     colors={
-        "Candidate A": "#2196F3",
-        "Candidate B": "#F44336",
-        "Candidate C": "#4CAF50",
+        "Brandon Johnson": "#00FFF2FF",
+        "Alexi Giannoulias": "#FF8800",
+        "Susan Mendoza": "#4CAF50",
     },
 
     ideological_blocs=[
-        # TODO: fill in based on ideological alignment
-        ["Candidate A"],
-        ["Candidate B", "Candidate C"],
+        
+        ["Susan Mendoza"],
+        ["Alexi Giannoulias"],
+        ["Brandon Johnson"]["Alexi Giannoulias"],
     ],
+    bloc_ideological_positions=[-0.8, 0.2, 0.8],
 
     # ── Polls ────────────────────────────────────────────────────────────────
-    # TODO: add polls as they are released.
-    # Use pollster_ratings.json (from pollster_calibration.py) for quality scores.
-    polls=[],
+    # Add polls to polls_round1.json (first round) or polls_runoff.json (runoff).
+    # Run with --round round1 (default) or --round runoff to select which set.
+    polls=[],  # loaded at runtime from polls_round1_path / polls_runoff_path
+    polls_round1_path=Path(__file__).parent / "polls_round1.json",
+    polls_runoff_path=Path(__file__).parent / "polls_runoff.json",
 
     # ── Undecided allocation & modeling constants ────────────────────────────
     # TODO: fill in based on candidate profiles
     undecided_allocation={
-        "Candidate A": 1.0,
-        "Candidate B": 1.0,
-        "Candidate C": 1.0,
+        "Alexi Giannoulias": 1.0,
+        "Brandon Johnson": 1.0,
+        "Susan Mendoza": 1.0,
     },
     favorability_blend=0.25,
     second_choice_strength=0.60,
@@ -71,11 +75,10 @@ CONFIG = RaceConfig(
     data_dir=_DATA_DIR,
     output_dir=_OUTPUT_DIR,
 
-    # TODO: update shapefile paths once Chicago precinct shapefile is obtained.
+    # TODO: update shapefile paths once Chicago shapefiles are obtained.
     # Confirm the JoinField format (likely "WARD XX PRECINCT YY") before running.
     shapefile_precinct=Path("shapefile/chicago_precincts.shp"),
-    shapefile_district=Path("shapefile/chicago_city_boundary.shp"),
-    shapefile_crosstab=None,  # set to ward boundaries shapefile if polls provide ward crosstabs
+    shapefile_crosstab=Path("shapefile/chicago_wards.shp"),  # ward boundaries for result coloring
 
     joinfield_format="CHICAGO",
 

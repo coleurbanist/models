@@ -150,6 +150,14 @@ class RaceConfig:
     # If None, poll_weighting.py uses the pollster_quality scores in polls[].
     pollster_ratings_path: Path | None = None
 
+    # ------------------------------------------------------------------ multi-round poll files
+    # For races with a runoff (e.g. Chicago mayor), polls can be stored in separate
+    # JSON files instead of inline. Each file is a JSON array of poll dicts in the
+    # same format as the inline polls list. run.py loads the appropriate file based
+    # on the --round flag. Leave None for single-round races or inline-polls races.
+    polls_round1_path: Path | None = None
+    polls_runoff_path: Path | None = None
+
     # ------------------------------------------------------------------ demographic calibration
     # race_context: key used to look up precinct_progressive_scores in the DB.
     #   e.g. "chicago_mayor", "il09". If None, ideology dimension is skipped.

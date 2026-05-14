@@ -12,6 +12,11 @@ race_config.py and writes results to the output directory configured there.
 
 FLAGS
 -----
+--round {round1,runoff}
+    Which round to model. Default is round1 (the February general election).
+    Use runoff after the first round if no candidate wins outright.
+    Polls are loaded from polls_round1.json or polls_runoff.json accordingly.
+
 --early-votes
     Also estimate banked early/mail votes using Chicago BOE demographic data.
     Only useful on or after election night when the BOE releases precinct-level
@@ -23,22 +28,34 @@ FLAGS
     output/poll_snapshots/<ID>/ and do not overwrite the main aggregate output.
 
 --list-polls
-    Print all poll IDs currently in race_config.py and exit. Use this to
-    find the right ID to pass to --poll-id.
+    Print all poll IDs for the selected round and exit. Use this to find the
+    right ID to pass to --poll-id.
 
 EXAMPLES
 --------
-    # Normal aggregate run
+    # Normal first-round aggregate run
     python -m races.chicago_mayor_2027.run
 
-    # See what polls are loaded
+    # See what polls are loaded for the first round
     python -m races.chicago_mayor_2027.run --list-polls
 
     # Run with just a specific PPP poll (use --list-polls to see IDs)
     python -m races.chicago_mayor_2027.run --poll-id ppp_2027-01-15
 
+    # Model the runoff
+    python -m races.chicago_mayor_2027.run --round runoff
+
     # Run aggregate + early vote estimates (election night only)
     python -m races.chicago_mayor_2027.run --early-votes
+
+ADDING A NEW POLL
+-----------------
+For a first-round poll: add a dict to polls_round1.json.
+For a runoff poll: add a dict to polls_runoff.json.
+Required keys: pollster_id, pollster_name, pollster_quality, field_end,
+sample_size, moe, is_internal, topline. Optional: crosstabs,
+demographic_crosstabs, favorability, second_choice. See pollster_db.json for
+quality scores; unknown pollsters can set pollster_quality manually.
 
 OUTPUTS
 -------
@@ -70,12 +87,6 @@ Written to the output directory defined in race_config.py:
     poll_snapshots/<poll_id>/       — same set of files as above but for a single-poll
                                         run (--poll-id). Does not overwrite main outputs.
 
-ADDING A NEW POLL
------------------
-Edit races/chicago_mayor_2027/race_config.py and append a new dict to the polls=[]
-list. Required keys: pollster_id, pollster_name, pollster_quality, field_end,
-sample_size, moe, is_internal, topline. Optional: crosstabs, demographic_crosstabs,
-favorability, second_choice. See existing entries for format. Then re-run.
 """
 
 from __future__ import annotations
@@ -87,6 +98,7 @@ import sys
 from dataclasses import replace
 from datetime import datetime
 from pathlib import Path
+from typing import Literal
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
@@ -97,23 +109,38 @@ from core.regional_forecast import generate_regional_forecast
 from core.chicago_early_votes import compute_chicago_early_votes
 
 
-def main(include_early_votes: bool = False, poll_id: str | None = None) -> None:
-    # ── Build the config to use for this run ──────────────────────────────────
+def _load_polls_for_round(round_name: Literal["round1", "runoff"]) -> list[dict]:
+    path = CONFIG.polls_round1_path if round_name == "round1" else CONFIG.polls_runoff_path
+    if path is None or not path.exists():
+        return []
+    with path.open(encoding="utf-8") as f:
+        return json.load(f)
+
+
+def main(
+    include_early_votes: bool = False,
+    poll_id: str | None = None,
+    round_name: Literal["round1", "runoff"] = "round1",
+) -> None:
+    # ── Load polls for the selected round ─────────────────────────────────────
+    all_polls = _load_polls_for_round(round_name)
+    config = replace(CONFIG, polls=all_polls)
+
+    # ── Optionally filter to a single poll ────────────────────────────────────
     if poll_id:
-        matching = [p for p in CONFIG.polls if get_poll_id(p) == poll_id]
+        matching = [p for p in all_polls if get_poll_id(p) == poll_id]
         if not matching:
-            available = sorted(get_poll_id(p) for p in CONFIG.polls)
-            print(f"Poll ID '{poll_id}' not found. Available poll IDs:")
+            available = sorted(get_poll_id(p) for p in all_polls)
+            print(f"Poll ID '{poll_id}' not found in {round_name}. Available poll IDs:")
             for pid in available:
                 print(f"  {pid}")
             sys.exit(1)
-        config   = replace(CONFIG, polls=matching)
-        out_dir  = CONFIG.output_dir / "poll_snapshots" / poll_id
-        run_label = f"poll:{poll_id}"
+        config    = replace(config, polls=matching)
+        out_dir   = CONFIG.output_dir / "poll_snapshots" / poll_id
+        run_label = f"{round_name}:poll:{poll_id}"
     else:
-        config   = CONFIG
-        out_dir  = CONFIG.output_dir
-        run_label = "aggregate"
+        out_dir   = CONFIG.output_dir
+        run_label = f"{round_name}:aggregate"
 
     print(f"[Chicago Mayor 2027] {config.race_label}  ({run_label})")
 
@@ -245,19 +272,24 @@ def _save(path: Path, data: object) -> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Chicago Mayor 2027 pipeline")
+    parser.add_argument("--round", choices=["round1", "runoff"], default="round1",
+                        help="Which round to model (default: round1)")
     parser.add_argument("--early-votes", action="store_true",
                         help="Include Chicago BOE early vote estimates")
     parser.add_argument("--poll-id", metavar="ID",
                         help="Run with a single poll instead of the weighted aggregate. "
                              "Use --list-polls to see available IDs.")
     parser.add_argument("--list-polls", action="store_true",
-                        help="Print available poll IDs and exit")
+                        help="Print available poll IDs for the selected round and exit")
     args = parser.parse_args()
 
+    round_name = args.round
+
     if args.list_polls:
-        print("Available poll IDs:")
-        for p in CONFIG.polls:
+        polls = _load_polls_for_round(round_name)
+        print(f"Available poll IDs ({round_name}):")
+        for p in polls:
             print(f"  {get_poll_id(p):<36}  {p['pollster_name']}  ({p['field_end']})")
         sys.exit(0)
 
-    main(include_early_votes=args.early_votes, poll_id=args.poll_id)
+    main(include_early_votes=args.early_votes, poll_id=args.poll_id, round_name=round_name)
