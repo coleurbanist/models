@@ -1,0 +1,15 @@
+# Core pipeline
+pandas>=2.0
+numpy>=1.24
+geopandas>=0.14
+shapely>=2.0
+
+# HTML output
+jinja2>=3.1
+plotly>=5.18
+
+# Optional: election night Bluesky posting
+# atproto>=0.0.46
+
+# Optional: precinct demographic analysis
+# statsmodels>=0.14

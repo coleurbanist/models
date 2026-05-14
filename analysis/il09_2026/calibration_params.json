@@ -1,0 +1,917 @@
+{
+  "race": "il09_2026",
+  "prediction_as_of": "2026-03-14",
+  "undecided": {
+    "undecided_pool_pct": 2.52,
+    "top_tier_actual_fraction": 3.159,
+    "top_tier_predicted_fraction": 0.187,
+    "actual_gain_by_candidate": {
+      "Fine": -35.32,
+      "Biss": 23.26,
+      "Abughazaleh": 20.02,
+      "Simmons": 0.0,
+      "Amiwala": -2.16,
+      "Andrew": 2.31,
+      "Huynh": -5.6
+    }
+  },
+  "geography": {
+    "mean_error_by_jurisdiction": {
+      "CITY OF CHICAGO": {
+        "Fine": -1.79,
+        "Biss": 2.47,
+        "Abughazaleh": -6.86,
+        "Simmons": 1.2,
+        "Amiwala": 1.56,
+        "Andrew": 2.61,
+        "Huynh": -0.26
+      },
+      "COOK": {
+        "Fine": -6.62,
+        "Biss": -2.82,
+        "Abughazaleh": 0.81,
+        "Simmons": 5.45,
+        "Amiwala": 0.57,
+        "Andrew": 1.17,
+        "Huynh": 0.38
+      },
+      "LAKE": {
+        "Fine": -6.33,
+        "Biss": -9.28,
+        "Abughazaleh": 1.92,
+        "Simmons": 4.6,
+        "Amiwala": 3.53,
+        "Andrew": 3.74,
+        "Huynh": 0.75
+      },
+      "MCHENRY": {
+        "Fine": -2.45,
+        "Biss": 1.67,
+        "Abughazaleh": -9.32,
+        "Simmons": 3.7,
+        "Amiwala": 3.27,
+        "Andrew": 2.19,
+        "Huynh": -0.12
+      }
+    },
+    "mean_error_by_township": {
+      "Evanston": {
+        "Fine": 4.76,
+        "Biss": -8.97,
+        "Abughazaleh": -5.32,
+        "Simmons": 3.27,
+        "Amiwala": 2.83,
+        "Andrew": 1.36,
+        "Huynh": 0.99
+      },
+      "Maine": {
+        "Fine": -5.9,
+        "Biss": -3.41,
+        "Abughazaleh": -0.15,
+        "Simmons": 5.42,
+        "Amiwala": 1.95,
+        "Andrew": 1.54,
+        "Huynh": -0.51
+      },
+      "New Trier": {
+        "Fine": -2.99,
+        "Biss": 3.19,
+        "Abughazaleh": 5.43,
+        "Simmons": 7.13,
+        "Amiwala": 2.75,
+        "Andrew": -16.94,
+        "Huynh": 0.37
+      },
+      "Niles": {
+        "Fine": -8.05,
+        "Biss": -1.96,
+        "Abughazaleh": 1.17,
+        "Simmons": 6.82,
+        "Amiwala": -3.65,
+        "Andrew": 4.84,
+        "Huynh": -0.23
+      },
+      "Northfield": {
+        "Fine": -21.35,
+        "Biss": 6.85,
+        "Abughazaleh": 5.54,
+        "Simmons": 7.03,
+        "Amiwala": 0.99,
+        "Andrew": -0.64,
+        "Huynh": 0.52
+      },
+      "Wheeling": {
+        "Fine": -6.25,
+        "Biss": -8.09,
+        "Abughazaleh": 1.88,
+        "Simmons": 3.63,
+        "Amiwala": 2.54,
+        "Andrew": 4.04,
+        "Huynh": 1.18
+      }
+    }
+  },
+  "community_blocs": {
+    "district_avg_pct": {
+      "Fine": 20.88,
+      "Biss": 30.71,
+      "Abughazaleh": 27.47,
+      "Simmons": 7.45,
+      "Amiwala": 5.3,
+      "Andrew": 6.33,
+      "Huynh": 1.85
+    },
+    "community_bloc_precincts": {
+      "Fine": [
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 50 Precinct 11",
+          "actual_pct": 80.96,
+          "predicted_pct": 17.79,
+          "error_pp": -63.17,
+          "total_votes": 604
+        },
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 50 Precinct 18",
+          "actual_pct": 79.17,
+          "predicted_pct": 16.44,
+          "error_pp": -62.72,
+          "total_votes": 72
+        },
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 50 Precinct 01",
+          "actual_pct": 78.65,
+          "predicted_pct": 18.5,
+          "error_pp": -60.14,
+          "total_votes": 548
+        },
+        {
+          "JoinField": "COOK:8200019",
+          "actual_pct": 75.86,
+          "predicted_pct": 21.73,
+          "error_pp": -54.13,
+          "total_votes": 526
+        },
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 50 Precinct 24",
+          "actual_pct": 73.78,
+          "predicted_pct": 18.59,
+          "error_pp": -55.19,
+          "total_votes": 225
+        },
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 50 Precinct 22",
+          "actual_pct": 70.98,
+          "predicted_pct": 18.5,
+          "error_pp": -52.48,
+          "total_votes": 479
+        },
+        {
+          "JoinField": "COOK:8300053",
+          "actual_pct": 65.3,
+          "predicted_pct": 20.38,
+          "error_pp": -44.92,
+          "total_votes": 268
+        },
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 50 Precinct 10",
+          "actual_pct": 64.59,
+          "predicted_pct": 18.5,
+          "error_pp": -46.09,
+          "total_votes": 305
+        },
+        {
+          "JoinField": "COOK:8300041",
+          "actual_pct": 62.02,
+          "predicted_pct": 20.26,
+          "error_pp": -41.76,
+          "total_votes": 258
+        },
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 50 Precinct 16",
+          "actual_pct": 60.61,
+          "predicted_pct": 17.99,
+          "error_pp": -42.61,
+          "total_votes": 99
+        },
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 50 Precinct 09",
+          "actual_pct": 58.56,
+          "predicted_pct": 17.98,
+          "error_pp": -40.58,
+          "total_votes": 111
+        },
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 50 Precinct 02",
+          "actual_pct": 58.27,
+          "predicted_pct": 18.5,
+          "error_pp": -39.77,
+          "total_votes": 393
+        },
+        {
+          "JoinField": "COOK:8200005",
+          "actual_pct": 57.0,
+          "predicted_pct": 19.82,
+          "error_pp": -37.18,
+          "total_votes": 200
+        },
+        {
+          "JoinField": "COOK:8200047",
+          "actual_pct": 56.83,
+          "predicted_pct": 20.04,
+          "error_pp": -36.78,
+          "total_votes": 227
+        },
+        {
+          "JoinField": "COOK:8300013",
+          "actual_pct": 55.38,
+          "predicted_pct": 20.04,
+          "error_pp": -35.34,
+          "total_votes": 195
+        },
+        {
+          "JoinField": "COOK:8300048",
+          "actual_pct": 55.07,
+          "predicted_pct": 21.84,
+          "error_pp": -33.23,
+          "total_votes": 207
+        },
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 50 Precinct 14",
+          "actual_pct": 54.12,
+          "predicted_pct": 14.94,
+          "error_pp": -39.18,
+          "total_votes": 85
+        },
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 50 Precinct 12",
+          "actual_pct": 53.61,
+          "predicted_pct": 15.0,
+          "error_pp": -38.61,
+          "total_votes": 97
+        },
+        {
+          "JoinField": "COOK:8300052",
+          "actual_pct": 53.21,
+          "predicted_pct": 21.37,
+          "error_pp": -31.85,
+          "total_votes": 280
+        },
+        {
+          "JoinField": "COOK:8300051",
+          "actual_pct": 52.41,
+          "predicted_pct": 22.13,
+          "error_pp": -30.28,
+          "total_votes": 622
+        }
+      ],
+      "Abughazaleh": [
+        {
+          "JoinField": "COOK:7507003",
+          "actual_pct": 84.62,
+          "predicted_pct": 24.42,
+          "error_pp": -60.19,
+          "total_votes": 26
+        },
+        {
+          "JoinField": "COOK:7501001",
+          "actual_pct": 59.66,
+          "predicted_pct": 24.42,
+          "error_pp": -35.24,
+          "total_votes": 176
+        }
+      ],
+      "Simmons": [
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 48 Precinct 05",
+          "actual_pct": 27.66,
+          "predicted_pct": 15.68,
+          "error_pp": -11.98,
+          "total_votes": 282
+        },
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 48 Precinct 03",
+          "actual_pct": 25.58,
+          "predicted_pct": 16.33,
+          "error_pp": -9.25,
+          "total_votes": 344
+        },
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 48 Precinct 11",
+          "actual_pct": 25.05,
+          "predicted_pct": 16.1,
+          "error_pp": -8.95,
+          "total_votes": 463
+        },
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 46 Precinct 22",
+          "actual_pct": 24.57,
+          "predicted_pct": 16.18,
+          "error_pp": -8.39,
+          "total_votes": 403
+        },
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 48 Precinct 35",
+          "actual_pct": 23.77,
+          "predicted_pct": 16.12,
+          "error_pp": -7.65,
+          "total_votes": 648
+        },
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 46 Precinct 20",
+          "actual_pct": 20.97,
+          "predicted_pct": 16.29,
+          "error_pp": -4.68,
+          "total_votes": 453
+        },
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 50 Precinct 07",
+          "actual_pct": 20.95,
+          "predicted_pct": 13.95,
+          "error_pp": -7.0,
+          "total_votes": 506
+        },
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 46 Precinct 17",
+          "actual_pct": 20.75,
+          "predicted_pct": 16.29,
+          "error_pp": -4.46,
+          "total_votes": 747
+        },
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 48 Precinct 06",
+          "actual_pct": 20.64,
+          "predicted_pct": 16.3,
+          "error_pp": -4.34,
+          "total_votes": 528
+        },
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 48 Precinct 34",
+          "actual_pct": 20.57,
+          "predicted_pct": 16.33,
+          "error_pp": -4.24,
+          "total_votes": 384
+        },
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 48 Precinct 15",
+          "actual_pct": 20.17,
+          "predicted_pct": 16.33,
+          "error_pp": -3.84,
+          "total_votes": 362
+        },
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 48 Precinct 31",
+          "actual_pct": 19.96,
+          "predicted_pct": 16.28,
+          "error_pp": -3.68,
+          "total_votes": 516
+        },
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 48 Precinct 21",
+          "actual_pct": 19.26,
+          "predicted_pct": 15.72,
+          "error_pp": -3.54,
+          "total_votes": 514
+        },
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 48 Precinct 29",
+          "actual_pct": 19.25,
+          "predicted_pct": 15.66,
+          "error_pp": -3.58,
+          "total_votes": 213
+        },
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 49 Precinct 07",
+          "actual_pct": 19.0,
+          "predicted_pct": 16.33,
+          "error_pp": -2.67,
+          "total_votes": 721
+        },
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 49 Precinct 12",
+          "actual_pct": 18.83,
+          "predicted_pct": 16.08,
+          "error_pp": -2.75,
+          "total_votes": 393
+        },
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 49 Precinct 01",
+          "actual_pct": 18.65,
+          "predicted_pct": 14.3,
+          "error_pp": -4.35,
+          "total_votes": 488
+        },
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 48 Precinct 12",
+          "actual_pct": 18.47,
+          "predicted_pct": 16.17,
+          "error_pp": -2.31,
+          "total_votes": 563
+        },
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 46 Precinct 21",
+          "actual_pct": 18.23,
+          "predicted_pct": 15.72,
+          "error_pp": -2.51,
+          "total_votes": 384
+        },
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 48 Precinct 17",
+          "actual_pct": 18.18,
+          "predicted_pct": 14.72,
+          "error_pp": -3.46,
+          "total_votes": 154
+        }
+      ],
+      "Amiwala": [
+        {
+          "JoinField": "COOK:8200035",
+          "actual_pct": 36.12,
+          "predicted_pct": 9.31,
+          "error_pp": -26.8,
+          "total_votes": 335
+        },
+        {
+          "JoinField": "COOK:8200010",
+          "actual_pct": 31.17,
+          "predicted_pct": 9.32,
+          "error_pp": -21.86,
+          "total_votes": 247
+        },
+        {
+          "JoinField": "COOK:8200030",
+          "actual_pct": 21.95,
+          "predicted_pct": 9.31,
+          "error_pp": -12.64,
+          "total_votes": 164
+        },
+        {
+          "JoinField": "COOK:8300043",
+          "actual_pct": 20.0,
+          "predicted_pct": 4.52,
+          "error_pp": -15.48,
+          "total_votes": 5
+        },
+        {
+          "JoinField": "COOK:8200058",
+          "actual_pct": 19.16,
+          "predicted_pct": 9.75,
+          "error_pp": -9.41,
+          "total_votes": 308
+        },
+        {
+          "JoinField": "COOK:8200040",
+          "actual_pct": 19.12,
+          "predicted_pct": 9.31,
+          "error_pp": -9.81,
+          "total_votes": 455
+        },
+        {
+          "JoinField": "COOK:8200061",
+          "actual_pct": 18.81,
+          "predicted_pct": 9.31,
+          "error_pp": -9.5,
+          "total_votes": 319
+        },
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 50 Precinct 20",
+          "actual_pct": 18.8,
+          "predicted_pct": 10.18,
+          "error_pp": -8.62,
+          "total_votes": 133
+        },
+        {
+          "JoinField": "COOK:9600048",
+          "actual_pct": 18.75,
+          "predicted_pct": 6.17,
+          "error_pp": -12.58,
+          "total_votes": 16
+        },
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 40 Precinct 04",
+          "actual_pct": 18.64,
+          "predicted_pct": 8.1,
+          "error_pp": -10.55,
+          "total_votes": 59
+        },
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 50 Precinct 21",
+          "actual_pct": 18.03,
+          "predicted_pct": 10.12,
+          "error_pp": -7.9,
+          "total_votes": 294
+        },
+        {
+          "JoinField": "COOK:8200017",
+          "actual_pct": 17.65,
+          "predicted_pct": 9.23,
+          "error_pp": -8.42,
+          "total_votes": 374
+        },
+        {
+          "JoinField": "COOK:8200041",
+          "actual_pct": 17.36,
+          "predicted_pct": 7.23,
+          "error_pp": -10.13,
+          "total_votes": 311
+        },
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 50 Precinct 19",
+          "actual_pct": 17.32,
+          "predicted_pct": 10.04,
+          "error_pp": -7.28,
+          "total_votes": 127
+        },
+        {
+          "JoinField": "COOK:8200012",
+          "actual_pct": 16.86,
+          "predicted_pct": 9.31,
+          "error_pp": -7.55,
+          "total_votes": 172
+        },
+        {
+          "JoinField": "COOK:8200024",
+          "actual_pct": 16.73,
+          "predicted_pct": 10.03,
+          "error_pp": -6.7,
+          "total_votes": 275
+        },
+        {
+          "JoinField": "COOK:8200042",
+          "actual_pct": 16.44,
+          "predicted_pct": 9.32,
+          "error_pp": -7.12,
+          "total_votes": 225
+        },
+        {
+          "JoinField": "COOK:8200052",
+          "actual_pct": 16.38,
+          "predicted_pct": 9.31,
+          "error_pp": -7.08,
+          "total_votes": 177
+        },
+        {
+          "JoinField": "COOK:8200036",
+          "actual_pct": 16.09,
+          "predicted_pct": 5.55,
+          "error_pp": -10.54,
+          "total_votes": 174
+        },
+        {
+          "JoinField": "COOK:8200044",
+          "actual_pct": 15.48,
+          "predicted_pct": 9.31,
+          "error_pp": -6.17,
+          "total_votes": 310
+        }
+      ],
+      "Andrew": [
+        {
+          "JoinField": "COOK:8100018",
+          "actual_pct": 53.09,
+          "predicted_pct": 10.95,
+          "error_pp": -42.14,
+          "total_votes": 81
+        },
+        {
+          "JoinField": "COOK:8100036",
+          "actual_pct": 41.19,
+          "predicted_pct": 10.57,
+          "error_pp": -30.62,
+          "total_votes": 505
+        },
+        {
+          "JoinField": "COOK:8100037",
+          "actual_pct": 39.75,
+          "predicted_pct": 10.12,
+          "error_pp": -29.63,
+          "total_votes": 395
+        },
+        {
+          "JoinField": "COOK:8100032",
+          "actual_pct": 38.91,
+          "predicted_pct": 10.57,
+          "error_pp": -28.35,
+          "total_votes": 221
+        },
+        {
+          "JoinField": "COOK:8100038",
+          "actual_pct": 38.29,
+          "predicted_pct": 10.57,
+          "error_pp": -27.72,
+          "total_votes": 410
+        },
+        {
+          "JoinField": "COOK:8300009",
+          "actual_pct": 34.31,
+          "predicted_pct": 9.08,
+          "error_pp": -25.24,
+          "total_votes": 204
+        },
+        {
+          "JoinField": "COOK:8100031",
+          "actual_pct": 33.8,
+          "predicted_pct": 10.57,
+          "error_pp": -23.23,
+          "total_votes": 142
+        },
+        {
+          "JoinField": "COOK:8100033",
+          "actual_pct": 31.83,
+          "predicted_pct": 10.57,
+          "error_pp": -21.26,
+          "total_votes": 443
+        },
+        {
+          "JoinField": "COOK:8100027",
+          "actual_pct": 29.73,
+          "predicted_pct": 10.57,
+          "error_pp": -19.16,
+          "total_votes": 296
+        },
+        {
+          "JoinField": "COOK:8300023",
+          "actual_pct": 29.48,
+          "predicted_pct": 8.93,
+          "error_pp": -20.55,
+          "total_votes": 173
+        },
+        {
+          "JoinField": "COOK:8300037",
+          "actual_pct": 26.29,
+          "predicted_pct": 9.08,
+          "error_pp": -17.21,
+          "total_votes": 350
+        },
+        {
+          "JoinField": "COOK:8100003",
+          "actual_pct": 24.71,
+          "predicted_pct": 10.43,
+          "error_pp": -14.28,
+          "total_votes": 340
+        },
+        {
+          "JoinField": "COOK:8100026",
+          "actual_pct": 24.51,
+          "predicted_pct": 10.57,
+          "error_pp": -13.94,
+          "total_votes": 510
+        },
+        {
+          "JoinField": "COOK:8300006",
+          "actual_pct": 21.65,
+          "predicted_pct": 11.33,
+          "error_pp": -10.32,
+          "total_votes": 254
+        },
+        {
+          "JoinField": "COOK:7507005",
+          "actual_pct": 20.85,
+          "predicted_pct": 10.13,
+          "error_pp": -10.72,
+          "total_votes": 614
+        },
+        {
+          "JoinField": "COOK:8100021",
+          "actual_pct": 20.33,
+          "predicted_pct": 10.54,
+          "error_pp": -9.79,
+          "total_votes": 369
+        },
+        {
+          "JoinField": "COOK:8300008",
+          "actual_pct": 19.91,
+          "predicted_pct": 11.19,
+          "error_pp": -8.72,
+          "total_votes": 216
+        },
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 41 Precinct 31",
+          "actual_pct": 19.26,
+          "predicted_pct": 9.08,
+          "error_pp": -10.19,
+          "total_votes": 244
+        },
+        {
+          "JoinField": "COOK:8300030",
+          "actual_pct": 19.02,
+          "predicted_pct": 11.33,
+          "error_pp": -7.68,
+          "total_votes": 305
+        },
+        {
+          "JoinField": "COOK:8300035",
+          "actual_pct": 18.47,
+          "predicted_pct": 9.08,
+          "error_pp": -9.39,
+          "total_votes": 222
+        }
+      ],
+      "Huynh": [
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 48 Precinct 21",
+          "actual_pct": 12.26,
+          "predicted_pct": 2.82,
+          "error_pp": -9.43,
+          "total_votes": 514
+        },
+        {
+          "JoinField": "MCHENRY:ALG 23",
+          "actual_pct": 11.0,
+          "predicted_pct": 2.23,
+          "error_pp": -8.77,
+          "total_votes": 100
+        },
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 46 Precinct 21",
+          "actual_pct": 10.68,
+          "predicted_pct": 2.82,
+          "error_pp": -7.85,
+          "total_votes": 384
+        },
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 46 Precinct 23",
+          "actual_pct": 10.35,
+          "predicted_pct": 2.93,
+          "error_pp": -7.42,
+          "total_votes": 396
+        },
+        {
+          "JoinField": "MCHENRY:ALG 42",
+          "actual_pct": 10.26,
+          "predicted_pct": 2.23,
+          "error_pp": -8.03,
+          "total_votes": 156
+        },
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 48 Precinct 24",
+          "actual_pct": 9.31,
+          "predicted_pct": 2.82,
+          "error_pp": -6.49,
+          "total_votes": 591
+        },
+        {
+          "JoinField": "COOK:8200025",
+          "actual_pct": 9.16,
+          "predicted_pct": 1.37,
+          "error_pp": -7.79,
+          "total_votes": 131
+        },
+        {
+          "JoinField": "MCHENRY:ALG 19",
+          "actual_pct": 8.79,
+          "predicted_pct": 2.23,
+          "error_pp": -6.56,
+          "total_votes": 91
+        },
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 47 Precinct 06",
+          "actual_pct": 8.18,
+          "predicted_pct": 2.97,
+          "error_pp": -5.21,
+          "total_votes": 758
+        },
+        {
+          "JoinField": "MCHENRY:ALG 21",
+          "actual_pct": 8.11,
+          "predicted_pct": 2.23,
+          "error_pp": -5.88,
+          "total_votes": 148
+        },
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 50 Precinct 26",
+          "actual_pct": 7.91,
+          "predicted_pct": 1.17,
+          "error_pp": -6.74,
+          "total_votes": 139
+        },
+        {
+          "JoinField": "COOK:8000051",
+          "actual_pct": 7.87,
+          "predicted_pct": 1.37,
+          "error_pp": -6.5,
+          "total_votes": 127
+        },
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 40 Precinct 16",
+          "actual_pct": 7.5,
+          "predicted_pct": 2.94,
+          "error_pp": -4.56,
+          "total_votes": 480
+        },
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 46 Precinct 20",
+          "actual_pct": 7.28,
+          "predicted_pct": 2.97,
+          "error_pp": -4.32,
+          "total_votes": 453
+        },
+        {
+          "JoinField": "MCHENRY:ALG 61",
+          "actual_pct": 7.03,
+          "predicted_pct": 2.42,
+          "error_pp": -4.61,
+          "total_votes": 128
+        },
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 40 Precinct 20",
+          "actual_pct": 7.02,
+          "predicted_pct": 2.98,
+          "error_pp": -4.04,
+          "total_votes": 584
+        },
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 47 Precinct 05",
+          "actual_pct": 6.88,
+          "predicted_pct": 2.98,
+          "error_pp": -3.9,
+          "total_votes": 829
+        },
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 47 Precinct 02",
+          "actual_pct": 6.83,
+          "predicted_pct": 2.98,
+          "error_pp": -3.85,
+          "total_votes": 161
+        },
+        {
+          "JoinField": "CITY OF CHICAGO:Ward 48 Precinct 04",
+          "actual_pct": 6.67,
+          "predicted_pct": 2.82,
+          "error_pp": -3.84,
+          "total_votes": 465
+        },
+        {
+          "JoinField": "MCHENRY:ALG 20",
+          "actual_pct": 6.62,
+          "predicted_pct": 2.23,
+          "error_pp": -4.39,
+          "total_votes": 136
+        }
+      ]
+    }
+  },
+  "bloc_correlations": {
+    "Fine_vs_Biss": -0.349,
+    "Abughazaleh_vs_Simmons": 0.318,
+    "Fine_vs_Abughazaleh": -0.605,
+    "Biss_vs_Abughazaleh": -0.317,
+    "Amiwala_vs_Andrew": -0.21
+  },
+  "suggested_constraints": {
+    "undecided_allocation": {
+      "Fine": 0.3,
+      "Biss": 3.571,
+      "Abughazaleh": 3.074,
+      "Simmons": 0.3,
+      "Amiwala": 0.3,
+      "Andrew": 0.355,
+      "Huynh": 0.3
+    },
+    "fine_community_bloc_precincts": [
+      "CITY OF CHICAGO:Ward 50 Precinct 11",
+      "CITY OF CHICAGO:Ward 50 Precinct 18",
+      "CITY OF CHICAGO:Ward 50 Precinct 01",
+      "COOK:8200019",
+      "CITY OF CHICAGO:Ward 50 Precinct 24",
+      "CITY OF CHICAGO:Ward 50 Precinct 22",
+      "COOK:8300053",
+      "CITY OF CHICAGO:Ward 50 Precinct 10",
+      "COOK:8300041",
+      "CITY OF CHICAGO:Ward 50 Precinct 16",
+      "CITY OF CHICAGO:Ward 50 Precinct 09",
+      "CITY OF CHICAGO:Ward 50 Precinct 02",
+      "COOK:8200005",
+      "COOK:8200047",
+      "COOK:8300013",
+      "COOK:8300048",
+      "CITY OF CHICAGO:Ward 50 Precinct 14",
+      "CITY OF CHICAGO:Ward 50 Precinct 12",
+      "COOK:8300052",
+      "COOK:8300051"
+    ],
+    "amiwala_community_bloc_precincts": [
+      "COOK:8200035",
+      "COOK:8200010",
+      "COOK:8200030",
+      "COOK:8300043",
+      "COOK:8200058",
+      "COOK:8200040",
+      "COOK:8200061",
+      "COOK:9600048",
+      "COOK:8200017",
+      "COOK:8200041",
+      "COOK:8200012",
+      "COOK:8200024",
+      "COOK:8200042",
+      "COOK:8200052",
+      "COOK:8200036",
+      "COOK:8200044"
+    ],
+    "notes": {
+      "undecided_skew": "Top-tier absorbed 316% of undecideds vs 19% predicted",
+      "fine_community_bloc": "Ward 50 + Niles Township Orthodox Jewish precincts. Fine got 55-80% actual vs ~18% predicted. Use actual 2026 results to identify; ACS has no religion field.",
+      "niles_complexity": "Niles Township has overlapping community signals \u2014 Fine (Orthodox Jewish) and Amiwala (South Asian) both overperformed in DIFFERENT precincts. Township-level boost is wrong; must constrain at precinct level.",
+      "biss_bloc": "Biss straddles moderate/progressive \u2014 his errors correlate with both blocs. Grouping him with Fine as 'moderate' understates his progressive support."
+    }
+  }
+}

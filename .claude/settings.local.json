@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find ~/.cargo/registry/src -path \"*/rand_distr-0.4.3/src/dirichlet.rs\" 2>/dev/null | head -1 | xargs grep -n \"pub fn new\" 2>/dev/null)",
+      "Read(//home/cole/.cargo/registry/src/**)"
+    ]
+  }
+}
