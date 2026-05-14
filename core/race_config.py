@@ -26,11 +26,44 @@ class RaceConfig:
     colors: dict[str, str]              # {"CandName": "#rrggbb"} — consumed by display project
     ideological_blocs: list[list[str]]  # candidates that share correlated district-level noise
 
+    # Ideological position of each bloc on the conservative ↔ progressive axis.
+    # Parallel to ideological_blocs — one float per bloc, in the same order.
+    #   -1.0 = most conservative,  0.0 = center,  +1.0 = most progressive
+    # Used to translate a pollster's directional lean (from pollster_db.json) into
+    # per-candidate house effects:  he[cand] = pollster_lean × bloc_position[cand]
+    # Leave empty ([]) to skip lean-based adjustments (safe default for races where
+    # no pollster has a lean entered, or where the blocs aren't ideologically ordered).
+    bloc_ideological_positions: list[float] = field(default_factory=list)
+
     # ------------------------------------------------------------------ polls & modeling
     polls: list[dict[str, Any]]           # poll definition dicts (see poll_weighting.py)
     undecided_allocation: dict[str, float]  # {candidate: weight} for distributing undecideds
     favorability_blend: float = 0.25        # fraction of undecided weight from favorability
     second_choice_strength: float = 0.60   # fraction of downward deviation routed via SC matrix
+
+    # Discount applied to the commissioning candidate's topline in internal polls.
+    # Campaigns only release internal polls when the numbers flatter them, so the
+    # candidate who paid for it is likely overstated. Set commissioned_by in the
+    # poll dict to activate. 0.0 disables the discount entirely.
+    internal_candidate_discount: float = 2.0
+
+    # Viability scaling for undecided allocation.
+    # Each candidate's undecided weight is multiplied by baseline_share^alpha before
+    # the Dirichlet draw, concentrating undecideds toward polling frontrunners.
+    #
+    # Historical pattern: undecided voters break for higher-polling candidates (name
+    # recognition, perceived viability). IL-09 2026 confirmed this — undecideds went
+    # largely to the top 3, not the tail.
+    #
+    # This only affects the undecided pool, NOT the noise-driven variance that causes
+    # surges (fundamental_uncertainty_sigma, bloc shocks). Trailing candidates can still
+    # spike above their baseline via noise; they just don't also clean up among undecideds.
+    #
+    #   0.0 = no viability effect (weights purely from undecided_allocation + favorability)
+    #   0.5 = mild frontrunner tilt
+    #   1.0 = weight scales linearly with polling share (recommended default)
+    #   2.0 = strong concentration toward frontrunners
+    undecided_viability_alpha: float = 1.0
 
     # ------------------------------------------------------------------ simulation
     n_sim_district: int = 1_000_000  # district-level Monte Carlo trials

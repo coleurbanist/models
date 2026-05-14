@@ -34,8 +34,8 @@ EXAMPLES
     # See what polls are loaded
     python -m races.chicago_mayor_2027.run --list-polls
 
-    # Run with just the PPP Wave 2 poll
-    python -m races.chicago_mayor_2027.run --poll-id ppp_wave2
+    # Run with just a specific PPP poll (use --list-polls to see IDs)
+    python -m races.chicago_mayor_2027.run --poll-id ppp_2027-01-15
 
     # Run aggregate + early vote estimates (election night only)
     python -m races.chicago_mayor_2027.run --early-votes
@@ -91,7 +91,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 from races.chicago_mayor_2027.race_config import CONFIG
-from core.poll_weighting import aggregate_polls, run_district_simulation, build_versioned_history
+from core.poll_weighting import aggregate_polls, run_district_simulation, build_versioned_history, get_poll_id
 from core.precinct_pipeline import run_precinct_pipeline
 from core.regional_forecast import generate_regional_forecast
 from core.chicago_early_votes import compute_chicago_early_votes
@@ -100,9 +100,9 @@ from core.chicago_early_votes import compute_chicago_early_votes
 def main(include_early_votes: bool = False, poll_id: str | None = None) -> None:
     # ── Build the config to use for this run ──────────────────────────────────
     if poll_id:
-        matching = [p for p in CONFIG.polls if p["pollster_id"] == poll_id]
+        matching = [p for p in CONFIG.polls if get_poll_id(p) == poll_id]
         if not matching:
-            available = sorted(set(p["pollster_id"] for p in CONFIG.polls))
+            available = sorted(get_poll_id(p) for p in CONFIG.polls)
             print(f"Poll ID '{poll_id}' not found. Available poll IDs:")
             for pid in available:
                 print(f"  {pid}")
@@ -257,7 +257,7 @@ if __name__ == "__main__":
     if args.list_polls:
         print("Available poll IDs:")
         for p in CONFIG.polls:
-            print(f"  {p['pollster_id']:<30}  {p['pollster_name']}  ({p['field_end']})")
+            print(f"  {get_poll_id(p):<36}  {p['pollster_name']}  ({p['field_end']})")
         sys.exit(0)
 
     main(include_early_votes=args.early_votes, poll_id=args.poll_id)

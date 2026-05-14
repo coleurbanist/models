@@ -2,30 +2,57 @@
 Poll aggregation, weighting, and versioned history.
 
 Each poll in config.polls is a dict with these keys:
-    pollster_id     str
-    pollster_name   str
-    pollster_quality float          (0–1; overridden by pollster_ratings.json if present)
-    field_end       str             YYYY-MM-DD
-    sample_size     int
-    moe             float           margin of error (percentage points)
-    is_internal     bool
-    topline         dict[str, float]  {candidate: pct}  (values sum to ≤100; undecided = 100 - sum)
-    crosstabs       dict | None     {senate_district/ward: {candidate: pct}} or None
-    favorability    dict | None     {candidate: {"favorable": x, "unfavorable": y}} or None
-    second_choice   dict | None     {from_candidate: {to_candidate: pct}} or None
+    pollster_id      str
+    pollster_name    str
+    pollster_quality float           (0–1; overridden by pollster_ratings.json if present)
+    field_end        str             YYYY-MM-DD
+    sample_size      int
+    moe              float           margin of error (percentage points)
+    is_internal      bool
+    commissioned_by  str | None      candidate name; triggers internal discount when is_internal=True
+    topline          dict[str, float]  {candidate: pct}  (values sum to ≤100; undecided = 100 - sum)
+    crosstabs        dict | None     {senate_district/ward: {candidate: pct}} or None
+    favorability     dict | None     {candidate: {"favorable": x, "unfavorable": y}} or None
+    second_choice    dict | None     {from_candidate: {to_candidate: pct}} or None
+
+Internal poll handling
+----------------------
+is_internal=True halves the poll's composite weight (campaigns only release
+polls when the numbers help them, so internal polls carry selection bias).
+
+commissioned_by + is_internal=True triggers an additional automatic discount:
+config.internal_candidate_discount pp is subtracted from the commissioning
+candidate's topline. This is applied via the house_effect mechanism before
+aggregation so it interacts correctly with any other house effect adjustments.
 """
 
 from __future__ import annotations
 
 import json
-import math
 from copy import deepcopy
-from datetime import date, timedelta
+from datetime import date
 from pathlib import Path
 from typing import Any
 
 from .race_config import RaceConfig
 from . import simulator_runner
+
+
+# ── Poll identity ─────────────────────────────────────────────────────────
+
+def get_poll_id(poll: dict) -> str:
+    """
+    Unique identifier for a single poll. Used by --poll-id to target one poll.
+
+    If the poll dict has an explicit "poll_id" key, that is returned as-is.
+    Otherwise falls back to "{pollster_id}_{field_end}" (e.g. "m3_2027-01-15"),
+    which is unique as long as a pollster doesn't field two polls on the same day.
+
+    "pollster_id" is kept separate and is used only for pollster DB lookup.
+    You should never need to add a wave suffix to pollster_id — just use the
+    base pollster key (e.g. "m3") for every poll from that firm.
+    """
+    return poll.get("poll_id") or f"{poll['pollster_id']}_{poll['field_end']}"
 
 
 # ── Weighting helpers ──────────────────────────────────────────────────────
@@ -57,10 +84,31 @@ def _composite_weight(poll: dict, as_of: str | None = None) -> float:
 # ── Pollster ratings override ──────────────────────────────────────────────
 
 def _load_pollster_ratings(path: Path) -> dict[str, dict]:
-    if path.exists():
-        with path.open(encoding="utf-8") as f:
-            return json.load(f)
-    return {}
+    """
+    Load a pollster ratings file. Handles two formats:
+
+    Rich format (pollster_db.json) — entries have "silver_grade" and/or
+    "votehub_pct_within_moe". Quality is derived automatically from whichever
+    agencies have rated the pollster; both scores are averaged when available.
+
+    Simple format (pollster_ratings.json) — entries have an explicit "quality"
+    float. Kept for backward compatibility.
+    """
+    if not path.exists():
+        return {}
+    with path.open(encoding="utf-8") as f:
+        raw = json.load(f)
+
+    # Detect rich format: any entry has agency-specific keys
+    is_rich = any(
+        "silver_grade" in entry or "votehub_pct_within_moe" in entry
+        for entry in raw.values()
+    )
+    if is_rich:
+        from .pollster_ratings import load_pollster_db, to_poll_weighting_format
+        return to_poll_weighting_format(load_pollster_db(path))
+
+    return raw
 
 
 def _apply_pollster_ratings(polls: list[dict], ratings: dict) -> list[dict]:
@@ -70,8 +118,81 @@ def _apply_pollster_ratings(polls: list[dict], ratings: dict) -> list[dict]:
         pid = p.get("pollster_id", "")
         if pid in ratings:
             p["pollster_quality"] = ratings[pid].get("quality", p.get("pollster_quality", 0.7))
-            if "house_effect" not in p and "house_effect_adjustment" in ratings[pid]:
-                p["house_effect"] = ratings[pid]["house_effect_adjustment"]
+            # Merge pollster-level house effect into any existing poll-level adjustment.
+            # All three sources (manual poll, pollster rating, internal discount) are
+            # additive — a pollster's systematic bias applies on top of poll-specific ones.
+            if "house_effect_adjustment" in ratings[pid]:
+                he = dict(p.get("house_effect") or {})
+                for cand, adj in ratings[pid]["house_effect_adjustment"].items():
+                    he[cand] = he.get(cand, 0.0) + adj
+                p["house_effect"] = he
+        result.append(p)
+    return result
+
+
+def _apply_lean_adjustments(
+    ratings: dict[str, dict],
+    candidates: list[str],
+    ideological_blocs: list[list[str]],
+    bloc_positions: list[float],
+) -> dict[str, dict]:
+    """
+    Translate each pollster's directional lean into per-candidate house effects.
+
+    Formula: house_effect[cand] = lean × bloc_position[cand]
+
+    bloc_positions is parallel to ideological_blocs:
+      -1.0 = most conservative,  0.0 = center,  +1.0 = most progressive
+
+    Convention (matches pollster_db.json entry):
+      negative lean = R/conservative lean (pollster over-estimates conservative candidates)
+      positive lean = D/progressive lean  (pollster over-estimates progressive candidates)
+
+    Stacks additively with any existing per-candidate house_effect_adjustment entries.
+    Candidates not assigned to any bloc receive no lean adjustment.
+    """
+    if not bloc_positions or len(bloc_positions) != len(ideological_blocs):
+        return ratings
+
+    cand_position: dict[str, float] = {}
+    for bloc, pos in zip(ideological_blocs, bloc_positions):
+        for cand in bloc:
+            cand_position[cand] = pos
+
+    result = {}
+    for pid, rating in ratings.items():
+        lean = rating.get("lean")
+        if not lean:
+            result[pid] = rating
+            continue
+        r = dict(rating)
+        he = dict(r.get("house_effect_adjustment") or {})
+        for cand in candidates:
+            pos = cand_position.get(cand, 0.0)
+            if pos != 0.0:
+                he[cand] = he.get(cand, 0.0) + lean * pos
+        r["house_effect_adjustment"] = he
+        result[pid] = r
+    return result
+
+
+def _apply_internal_discount(polls: list[dict], discount: float) -> list[dict]:
+    """
+    For internal polls that name a commissioned_by candidate, shade that
+    candidate's topline down by `discount` pp via the house_effect mechanism.
+    Campaigns only release internal polls when the numbers flatter them, so
+    the commissioning candidate's share is likely overstated.
+    """
+    if discount <= 0:
+        return polls
+    result = []
+    for poll in polls:
+        p = deepcopy(poll)
+        if p.get("is_internal") and p.get("commissioned_by"):
+            cand = p["commissioned_by"]
+            he = dict(p.get("house_effect") or {})
+            he[cand] = he.get(cand, 0.0) + discount
+            p["house_effect"] = he
         result.append(p)
     return result
 
@@ -292,7 +413,16 @@ def aggregate_polls(config: RaceConfig, as_of: str | None = None) -> dict[str, A
     polls = config.polls
     if config.pollster_ratings_path:
         ratings = _load_pollster_ratings(config.pollster_ratings_path)
+        ratings = _apply_lean_adjustments(
+            ratings,
+            config.candidates,
+            config.ideological_blocs,
+            getattr(config, "bloc_ideological_positions", []),
+        )
         polls = _apply_pollster_ratings(polls, ratings)
+    polls = _apply_internal_discount(
+        polls, getattr(config, "internal_candidate_discount", 0.0)
+    )
 
     baseline = _aggregate_topline(polls, config.candidates, as_of)
     undecided = max(0.0, 1.0 - sum(baseline.values()))
@@ -340,6 +470,15 @@ def run_district_simulation(config: RaceConfig, polling: dict[str, Any]) -> dict
     for c in config.candidates:
         aware    = fav.get(c, {}).get("aware_rate", 1.0) if fav else 1.0
         alloc[c] = (1.0 - blend) * alloc.get(c, 1.0) + blend * aware
+
+    # Viability scaling: multiply each weight by polling_share^alpha so frontrunners
+    # attract a proportionally larger share of undecideds. Applied after the
+    # favorability blend so both signals are reflected before scaling.
+    alpha = getattr(config, "undecided_viability_alpha", 0.0)
+    if alpha > 0.0 and undecided > 0:
+        for c in config.candidates:
+            share    = max(baseline.get(c, 0.0), 1e-6)  # floor avoids 0^alpha = 0
+            alloc[c] = alloc[c] * (share ** alpha)
 
     sim_result = simulator_runner.run_district_sim(
         n_simulations=config.n_sim_district,

@@ -2,14 +2,12 @@
 Chicago Mayoral 2027 — race configuration scaffold.
 
 Fill in candidates, polls, and shapefile paths as they become available.
-See doc §9 for the full list of things that differ from IL-09.
 
 Key differences from IL-09:
   - has_runoff=True (top-two if no majority)
-  - regions = ward groups (not counties)
+  - regions = all 50 individual wards
   - joinfield_format="CHICAGO" (WARD XX PRECINCT YY)
   - shapefile_crosstab = ward boundaries (if polls provide ward-level crosstabs)
-  - Empirical pollster quality from pollster_calibration/pollster_ratings.json
 """
 
 from pathlib import Path
@@ -18,17 +16,8 @@ from core.race_config import RaceConfig
 _DATA_DIR = Path(__file__).parent / "data"
 _OUTPUT_DIR = Path(__file__).parent / "outputs"
 
-# Ward groups — 6 geographic clusters for regional breakdown.
-# Refine after reviewing 2023 ward-level results.
-# See doc §12.3 for the full ward-to-group mapping.
-WARD_GROUPS = [
-    "North Lakefront",
-    "Northwest Side",
-    "West Side",
-    "Near West / Latino",
-    "South Side",
-    "Southwest Side",
-]
+WARDS = [f"Ward {i}" for i in range(1, 51)]
+
 
 CONFIG = RaceConfig(
     # ── Identity ────────────────────────────────────────────────────────────
@@ -77,7 +66,7 @@ CONFIG = RaceConfig(
     # Chicago mayoral uses individual wards as regions (not election authorities —
     # there is only one election authority: the Chicago BOE).
     region_type="ward",
-    regions=WARD_GROUPS,
+    regions=WARDS,
 
     data_dir=_DATA_DIR,
     output_dir=_OUTPUT_DIR,
@@ -103,10 +92,9 @@ CONFIG = RaceConfig(
     runoff_threshold=0.50,  # must exceed 50% to win outright; otherwise top-two runoff
 
     # ── Pollster ratings ──────────────────────────────────────────────────────
-    # Path to empirical quality ratings derived from 2023 mayoral polling.
-    # Run pollster_calibration/pollster_calibration.py to generate this file.
-    pollster_ratings_path=Path(__file__).parent.parent.parent
-        / "pollster_calibration" / "pollster_ratings.json",
+    # Shared pollster ratings database (VoteHub + Silver Bulletin).
+    # Add pollsters to pollster_db.json at the project root as polls come in.
+    pollster_ratings_path=Path(__file__).parent.parent.parent / "pollster_db.json",
 
     # ── Race-specific constraints ─────────────────────────────────────────────
     # Ward organization / machine effects can be encoded here once ward-level

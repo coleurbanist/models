@@ -1,0 +1,16 @@
+{
+  "_comment": "Pollster ratings database. See core/pollster_ratings.py for format documentation.",
+  "_comment2": "votehub_pct_within_moe: decimal 0.0-1.0 (e.g. 0.78 = within MOE 78% of the time)",
+  "_comment3": "silver_grade: letter grade with +/- (e.g. 'A-', 'B+', 'A/B' for sparse data)",
+  "_comment4": "silver_house_effect_lean / votehub_house_effect_lean: negative = R/conservative lean, positive = D/progressive lean (pp); weighted 2/3 Silver + 1/3 VoteHub when both present",
+  "_comment5": "house_effect: {candidate: pp} per-candidate override, positive = pollster over-estimates",
+
+  "m3": {
+    "name": "M3 Strategies",
+    "votehub_pct_within_moe": null,
+    "silver_grade": "B/C",
+    "silver_house_effect_lean": -0.16,
+    "votehub_house_effect_lean": null,
+    "house_effect": {}
+  }
+}
