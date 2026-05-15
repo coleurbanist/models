@@ -26,15 +26,6 @@ class RaceConfig:
     colors: dict[str, str]              # {"CandName": "#rrggbb"} — consumed by display project
     ideological_blocs: list[list[str]]  # candidates that share correlated district-level noise
 
-    # Ideological position of each bloc on the conservative ↔ progressive axis.
-    # Parallel to ideological_blocs — one float per bloc, in the same order.
-    #   -1.0 = most conservative,  0.0 = center,  +1.0 = most progressive
-    # Used to translate a pollster's directional lean (from pollster_db.json) into
-    # per-candidate house effects:  he[cand] = pollster_lean × bloc_position[cand]
-    # Leave empty ([]) to skip lean-based adjustments (safe default for races where
-    # no pollster has a lean entered, or where the blocs aren't ideologically ordered).
-    bloc_ideological_positions: list[float] = field(default_factory=list)
-
     # ------------------------------------------------------------------ polls & modeling
     polls: list[dict[str, Any]]           # poll definition dicts (see poll_weighting.py)
     undecided_allocation: dict[str, float]  # {candidate: weight} for distributing undecideds
@@ -149,14 +140,6 @@ class RaceConfig:
     # Path to pollster_ratings.json produced by pollster_calibration.py.
     # If None, poll_weighting.py uses the pollster_quality scores in polls[].
     pollster_ratings_path: Path | None = None
-
-    # ------------------------------------------------------------------ multi-round poll files
-    # For races with a runoff (e.g. Chicago mayor), polls can be stored in separate
-    # JSON files instead of inline. Each file is a JSON array of poll dicts in the
-    # same format as the inline polls list. run.py loads the appropriate file based
-    # on the --round flag. Leave None for single-round races or inline-polls races.
-    polls_round1_path: Path | None = None
-    polls_runoff_path: Path | None = None
 
     # ------------------------------------------------------------------ demographic calibration
     # race_context: key used to look up precinct_progressive_scores in the DB.

@@ -15,6 +15,7 @@ from core.race_config import RaceConfig
 
 _DATA_DIR = Path(__file__).parent / "data"
 _OUTPUT_DIR = Path(__file__).parent / "outputs"
+_SHAPEFILES_DIR = Path(__file__).parent.parent.parent / "Shapefiles"
 
 WARDS = [f"Ward {i}" for i in range(1, 51)]
 
@@ -27,7 +28,7 @@ CONFIG = RaceConfig(
 
     # ── Candidates ──────────────────────────────────────────────────────────
     
-    candidates=["Brandon Johnson", "Susan Mendoza", "Alexi Giannoulias"],
+    candidates=["Brandon Johnson", "Susana Mendoza", "Alexi Giannoulias"],
 
     colors={
         "Brandon Johnson": "#00FFF2FF",
@@ -37,7 +38,7 @@ CONFIG = RaceConfig(
 
     ideological_blocs=[
         
-        ["Susan Mendoza"],
+        ["Susana Mendoza"],
         ["Alexi Giannoulias"],
         ["Brandon Johnson"]["Alexi Giannoulias"],
     ],
@@ -55,7 +56,7 @@ CONFIG = RaceConfig(
     undecided_allocation={
         "Alexi Giannoulias": 1.0,
         "Brandon Johnson": 1.0,
-        "Susan Mendoza": 1.0,
+        "Susana Mendoza": 1.0,
     },
     favorability_blend=0.25,
     second_choice_strength=0.60,
@@ -75,10 +76,8 @@ CONFIG = RaceConfig(
     data_dir=_DATA_DIR,
     output_dir=_OUTPUT_DIR,
 
-    # TODO: update shapefile paths once Chicago shapefiles are obtained.
-    # Confirm the JoinField format (likely "WARD XX PRECINCT YY") before running.
-    shapefile_precinct=Path("shapefile/chicago_precincts.shp"),
-    shapefile_crosstab=Path("shapefile/chicago_wards.shp"),  # ward boundaries for result coloring
+    shapefile_precinct=_SHAPEFILES_DIR / "chicago_precincts.geojson",
+    shapefile_crosstab=_SHAPEFILES_DIR / "chicago_wards.geojson",
 
     joinfield_format="CHICAGO",
 

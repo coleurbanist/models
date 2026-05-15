@@ -12,5 +12,126 @@
     "silver_house_effect_lean": -0.16,
     "votehub_house_effect_lean": null,
     "house_effect": {}
+  },
+  "ppp":{
+    "name": "Public Policy Polling",
+    "votehub_house_effect_lean": null,
+    "silver_grade": "B+",
+    "silver_house_effect_lean": 0.88,
+    "votehub_pct_within_moe":null,
+    "house_effect":{}
+  },
+  "victory research":{
+    "name":"Victory Reasearch",
+    "silver_grade":"B/C",
+    "silver_house_effect_lean":0.26,
+    "votehub_pct_within_moe": null,
+    "votehub_house_effect_lean":null,
+    "house_effect":{}
+  },
+  "bsp":{
+    "name":"BSP Research",
+    "silver_grade":"B/C",
+    "silver_house_effect_lean":-0.07,
+    "votehub_pct_within_moe": null,
+    "votehub_house_effect_lean":null,
+    "house_effect":{}
+  },
+   "gbao":{
+    "name":"GBAO",
+    "silver_grade":"B/C",
+    "silver_house_effect_lean":1.36,
+    "votehub_pct_within_moe": null,
+    "votehub_house_effect_lean":null,
+    "house_effect":{}
+  },
+  "mason-dixon":{
+    "name":"Mason-Dixon Polling and Strategy",
+    "silver_grade":"A-",
+    "silver_house_effect_lean":-0.5,
+    "votehub_pct_within_moe": null,
+    "votehub_house_effect_lean":null,
+    "house_effect":{}
+  },
+  "lake research":{
+    "name":"Lake Research Partners",
+    "silver_grade":"A/B",
+    "silver_house_effect_lean":0.65,
+    "votehub_pct_within_moe": null,
+    "votehub_house_effect_lean":null,
+    "house_effect":{}
+  },
+  "izq":{
+    "name":"IZQ Strategies",
+    "silver_grade":"B/C",
+    "silver_house_effect_lean":0,
+    "votehub_pct_within_moe": null,
+    "votehub_house_effect_lean":null,
+    "house_effect":{}
+  },
+  "lester":{
+    "name":"Lester and Associates",
+    "silver_grade":"B/C",
+    "silver_house_effect_lean":0,
+    "votehub_pct_within_moe": null,
+    "votehub_house_effect_lean":null,
+    "house_effect":{}
+  },
+  "impact":{
+    "name":"Impact Research",
+    "silver_grade":"B/C",
+    "silver_house_effect_lean":1.32,
+    "votehub_pct_within_moe": null,
+    "votehub_house_effect_lean":null,
+    "house_effect":{}
+  },
+  "ogden":{
+    "name":"Ogden and Fry",
+    "silver_grade":"B/C",
+    "silver_house_effect_lean":-0.01,
+    "votehub_pct_within_moe": null,
+    "votehub_house_effect_lean":null,
+    "house_effect":{}
+  },
+  "emereson":{
+    "name":"Emerson College",
+    "silver_grade":"A",
+    "silver_house_effect_lean":0.61,
+    "votehub_pct_within_moe": 0.73,
+    "votehub_house_effect_lean":-0.29,
+    "house_effect":{}
+  },
+  "tulcin":{
+    "name":"Tulchin Research",
+    "silver_grade":"B/C",
+    "silver_house_effect_lean":-0.06,
+    "votehub_pct_within_moe": null,
+    "votehub_house_effect_lean":null,
+    "house_effect":{}
+  },
+  "we ask america":{
+    "name":"We Ask America",
+    "silver_grade":"C",
+    "silver_house_effect_lean":-0.78,
+    "votehub_pct_within_moe": null,
+    "votehub_house_effect_lean":null,
+    "house_effect":{}
+  },
+  "david binder":{
+    "name":"David Binder Research",
+    "silver_grade":"B/C",
+    "silver_house_effect_lean":0.07,
+    "votehub_pct_within_moe": null,
+    "votehub_house_effect_lean":null,
+    "house_effect":{}
+  },
+  "global strategy":{
+    "name":"Global Strategy Group",
+    "silver_grade":"B/C",
+    "silver_house_effect_lean":1.61,
+    "votehub_pct_within_moe": null,
+    "votehub_house_effect_lean":null,
+    "house_effect":{}
   }
+
 }
