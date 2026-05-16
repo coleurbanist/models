@@ -113,6 +113,11 @@ class PollsterRating:
     # incumbent regardless of ideology).
     house_effect: dict[str, float] = field(default_factory=dict)
 
+    # Manual quality grade — your own assessment using the Silver Bulletin scale.
+    # Only applied when neither Silver Bulletin nor VoteHub has rated this pollster.
+    # Use the same grade format as silver_grade (e.g. "B-", "C+", "B/C").
+    manual_grade: str | None = None
+
     @property
     def house_effect_lean(self) -> float | None:
         """
@@ -148,14 +153,29 @@ class PollsterRating:
         return score
 
     @property
+    def manual_quality(self) -> float | None:
+        """Manual grade converted to 0–1 using the Silver Bulletin scale, or None if not set."""
+        if self.manual_grade is None:
+            return None
+        score = SILVER_GRADE_QUALITY.get(self.manual_grade)
+        if score is None:
+            raise ValueError(
+                f"Unknown grade '{self.manual_grade}' for pollster '{self.pollster_id}'. "
+                f"Valid grades: {sorted(SILVER_GRADE_QUALITY)}"
+            )
+        return score
+
+    @property
     def quality(self) -> float:
         """
         Combined 0–1 pollster quality score.
-        Averages whichever agencies have rated this pollster.
-        Falls back to 0.7 if neither agency has rated them.
+        Averages whichever official agencies have rated this pollster.
+        Falls back to manual_grade if set, then 0.7 if nothing is available.
         """
         scores = [s for s in (self.votehub_quality, self.silver_quality) if s is not None]
-        return sum(scores) / len(scores) if scores else 0.7
+        if scores:
+            return sum(scores) / len(scores)
+        return self.manual_quality if self.manual_quality is not None else 0.7
 
 
 # ── I/O ───────────────────────────────────────────────────────────────────
@@ -171,6 +191,8 @@ def load_pollster_db(path: Path) -> dict[str, PollsterRating]:
 
     db: dict[str, PollsterRating] = {}
     for pid, entry in raw.items():
+        if not isinstance(entry, dict):
+            continue  # skip _comment keys and other metadata
         db[pid] = PollsterRating(
             pollster_id=pid,
             pollster_name=entry.get("name", pid),
@@ -179,6 +201,7 @@ def load_pollster_db(path: Path) -> dict[str, PollsterRating]:
             silver_house_effect_lean=entry.get("silver_house_effect_lean"),
             votehub_house_effect_lean=entry.get("votehub_house_effect_lean"),
             house_effect=entry.get("house_effect", {}),
+            manual_grade=entry.get("manual_grade"),
         )
     return db
 

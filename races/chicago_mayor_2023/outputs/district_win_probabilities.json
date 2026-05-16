@@ -1,0 +1,94 @@
+{
+  "win_probs": {
+    "Brandon Johnson": 0.118239,
+    "Sophia King": 0.0005,
+    "Paul Vallas": 0.741277,
+    "Lori Lightfoot": 0.085555,
+    "Willie Wilson": 0.006811,
+    "Kam Buckner": 0.000451,
+    "Chuy Garc\u00eda": 0.046729,
+    "Jamal Green": 0.000438
+  },
+  "outright_win_probs": {
+    "Brandon Johnson": 2.2e-05,
+    "Kam Buckner": 0.0,
+    "Chuy Garc\u00eda": 3e-06,
+    "Paul Vallas": 0.003834,
+    "Lori Lightfoot": 9e-06,
+    "Sophia King": 0.0,
+    "Jamal Green": 0.0,
+    "Willie Wilson": 0.0
+  },
+  "runoff_probs": {
+    "Sophia King": 0.0025312910337184228,
+    "Lori Lightfoot": 0.1777128934719495,
+    "Jamal Green": 0.0023756891656929,
+    "Willie Wilson": 0.024006356587279596,
+    "Brandon Johnson": 0.22117952239261462,
+    "Chuy Garc\u00eda": 0.11191639260660234,
+    "Paul Vallas": 0.45811649460111714,
+    "Kam Buckner": 0.0021613601410254866
+  },
+  "advance_probs": {
+    "Kam Buckner": 0.004306,
+    "Chuy Garc\u00eda": 0.22297,
+    "Lori Lightfoot": 0.35406,
+    "Willie Wilson": 0.047827,
+    "Paul Vallas": 0.916523,
+    "Sophia King": 0.005043,
+    "Jamal Green": 0.004733,
+    "Brandon Johnson": 0.44067
+  },
+  "prob_no_runoff": 0.003868,
+  "mean_vote_shares": {
+    "Paul Vallas": 0.289256839071533,
+    "Sophia King": 0.035486616536494875,
+    "Lori Lightfoot": 0.17567305308167375,
+    "Chuy Garc\u00eda": 0.1516095204712756,
+    "Brandon Johnson": 0.18790768259493149,
+    "Jamal Green": 0.03470106026894999,
+    "Kam Buckner": 0.034536509255997425,
+    "Willie Wilson": 0.09082871871914018
+  },
+  "median_vote_shares": {
+    "Willie Wilson": 0.08936308929146666,
+    "Kam Buckner": 0.017995815971489464,
+    "Brandon Johnson": 0.18662293706741578,
+    "Lori Lightfoot": 0.1743359999268161,
+    "Paul Vallas": 0.2854695147353041,
+    "Sophia King": 0.01942991296614332,
+    "Jamal Green": 0.01815350452608109,
+    "Chuy Garc\u00eda": 0.15081919948315342
+  },
+  "p05_vote_shares": {
+    "Willie Wilson": 0.0,
+    "Chuy Garc\u00eda": 0.050901558088368236,
+    "Jamal Green": 0.0,
+    "Paul Vallas": 0.18465976856606944,
+    "Brandon Johnson": 0.08760357600248805,
+    "Kam Buckner": 0.0,
+    "Sophia King": 0.0,
+    "Lori Lightfoot": 0.07581883470925814
+  },
+  "p95_vote_shares": {
+    "Chuy Garc\u00eda": 0.25402188098272266,
+    "Lori Lightfoot": 0.2793501415754712,
+    "Paul Vallas": 0.40669414227447886,
+    "Sophia King": 0.12022868171241968,
+    "Brandon Johnson": 0.29259172270211714,
+    "Willie Wilson": 0.18831895363870998,
+    "Kam Buckner": 0.1184386305617224,
+    "Jamal Green": 0.11891726331683254
+  },
+  "baseline": {
+    "Paul Vallas": 0.26608384668762813,
+    "Brandon Johnson": 0.17396036359182052,
+    "Lori Lightfoot": 0.16621607337970182,
+    "Chuy Garc\u00eda": 0.1411757462947025,
+    "Willie Wilson": 0.08177098010973256,
+    "Kam Buckner": 0.00630078040114081,
+    "Sophia King": 0.007756405362110225,
+    "Jamal Green": 0.006391489794821752
+  },
+  "undecided_total": 0.15034431437834173
+}

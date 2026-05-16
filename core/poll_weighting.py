@@ -10,10 +10,15 @@ Each poll in config.polls is a dict with these keys:
     moe              float           margin of error (percentage points)
     is_internal      bool
     commissioned_by  str | None      candidate name; triggers internal discount when is_internal=True
-    topline          dict[str, float]  {candidate: pct}  (values sum to ≤100; undecided = 100 - sum)
-    crosstabs        dict | None     {senate_district/ward: {candidate: pct}} or None
-    favorability     dict | None     {candidate: {"favorable": x, "unfavorable": y}} or None
-    second_choice    dict | None     {from_candidate: {to_candidate: pct}} or None
+    topline             dict[str, float]  {candidate: pct}  (values sum to ≤100; undecided = 100 - sum)
+    crosstabs           dict | None     {senate_district/ward: {candidate: pct}} or None
+    favorability        dict | None     {candidate: {"favorable": x, "unfavorable": y}} or None
+    second_choice       dict | None     {from_candidate: {to_candidate: pct}} or None
+    sample_composition  dict | None     {group: pct_of_sample}  same keys as demographic_crosstabs
+                                        (e.g. {"white": 48, "black": 30, "female": 52, "age_18_30": 15})
+                                        Values may be 0–100 (pct) or 0–1 (fraction); either is accepted.
+                                        Used to compute subsample n for each crosstab group, which
+                                        down-weights unreliable subsamples via sqrt(n_sub / N) scaling.
 
 Internal poll handling
 ----------------------
@@ -55,6 +60,13 @@ def get_poll_id(poll: dict) -> str:
     return poll.get("poll_id") or f"{poll['pollster_id']}_{poll['field_end']}"
 
 
+# Default scale factor applied to demographic crosstab groups when the poll
+# does not report sample_composition for that group.  Equivalent to assuming
+# the subgroup is ~25% of the full sample (sqrt(0.25) = 0.5).  This ensures
+# polls that withhold composition data are not rewarded with higher crosstab
+# weight than polls that report it.
+_CROSSTAB_DEFAULT_SCALE = 0.5
+
 # ── Weighting helpers ──────────────────────────────────────────────────────
 
 def _recency_weight(field_end: str, as_of: str | None = None) -> float:
@@ -73,12 +85,22 @@ def _moe_weight(moe: float) -> float:
     return 100.0 / max(moe, 0.1)
 
 
-def _composite_weight(poll: dict, as_of: str | None = None) -> float:
+def _composite_weight(
+    poll: dict,
+    as_of: str | None = None,
+    election_day: str | None = None,
+    late_poll_multiplier: float = 1.0,
+) -> float:
     q = poll.get("pollster_quality", 0.7)
     r = _recency_weight(poll["field_end"], as_of)
     m = _moe_weight(poll["moe"])
     internal = 0.5 if poll.get("is_internal", False) else 1.0
-    return q * r * m * internal
+    w = q * r * m * internal
+    if late_poll_multiplier != 1.0 and election_day is not None:
+        days_before = (date.fromisoformat(election_day) - date.fromisoformat(poll["field_end"])).days
+        if 0 <= days_before <= 7:
+            w *= late_poll_multiplier
+    return w
 
 
 # ── Pollster ratings override ──────────────────────────────────────────────
@@ -203,6 +225,8 @@ def _aggregate_topline(
     polls: list[dict],
     candidates: list[str],
     as_of: str | None = None,
+    election_day: str | None = None,
+    late_poll_multiplier: float = 1.0,
 ) -> tuple[dict[str, float], dict[str, float]]:
     """
     Returns (baseline, undecided_pct_per_candidate_weight).
@@ -213,7 +237,7 @@ def _aggregate_topline(
     total_weight = 0.0
 
     for poll in polls:
-        w = _composite_weight(poll, as_of)
+        w = _composite_weight(poll, as_of, election_day, late_poll_multiplier)
         if w <= 0:
             continue
         topline = poll.get("topline", {})
@@ -243,6 +267,8 @@ def _aggregate_crosstabs(
     baseline: dict[str, float],
     crosstab_key: str = "crosstabs",
     as_of: str | None = None,
+    election_day: str | None = None,
+    late_poll_multiplier: float = 1.0,
 ) -> dict[str, dict[str, float]]:
     """
     Weighted average of crosstab vote shares by sub-group, anchored to the
@@ -254,6 +280,15 @@ def _aggregate_crosstabs(
     and accumulate weighted deltas.  The final estimate is:
         baseline[candidate] + weighted_avg(deltas)
     clipped to [0, 1].
+
+    NOTE — additive vs. logit-space deltas:
+    Deltas are computed in probability space (percentage points), not logit space.
+    This is simpler and works well when all candidates are above ~5%. If a candidate
+    drops near zero, additive deltas can produce negative estimates that get clipped
+    to 0, which distorts the other candidates' shares. If that happens, switch to
+    logit-space deltas: delta = logit(crosstab_pct) - logit(poll_topline_pct), with
+    the final estimate = expit(logit(baseline) + weighted_avg(logit_deltas)). That
+    approach is more consistent with how compute_precinct_shares works downstream.
 
     This keeps crosstab estimates consistent with the topline: when a strong
     new poll moves the baseline but carries no crosstab data, the crosstab
@@ -268,14 +303,39 @@ def _aggregate_crosstabs(
     delta_weights: dict[str, dict[str, float]] = {}
 
     for poll in polls:
-        w = _composite_weight(poll, as_of)
+        w = _composite_weight(poll, as_of, election_day, late_poll_multiplier)
         if w <= 0:
             continue
         crosstabs = poll.get(crosstab_key)
         if not crosstabs:
             continue
-        poll_topline = poll.get("topline", {})
+        poll_topline  = poll.get("topline", {})
+        sample_size   = poll.get("sample_size") or 0
+        sample_comp   = poll.get("sample_composition") or {}
+
         for group, shares in crosstabs.items():
+            # Normalize demographic group names (race, age) to lowercase so
+            # poll JSON capitalization ("White" vs "white") never matters.
+            # Geographic crosstabs (ward names) are not affected because they
+            # go through the "crosstabs" key, not "demographic_crosstabs".
+            if crosstab_key == "demographic_crosstabs":
+                group = group.strip().lower()
+
+            # Scale weight by subsample reliability.
+            # Known composition: w * sqrt(n_sub / N) — exact.
+            # Unknown composition: w * _CROSSTAB_DEFAULT_SCALE — conservative fallback
+            # so polls that withhold composition data aren't rewarded over those that report it.
+            if crosstab_key == "demographic_crosstabs":
+                if sample_size and group in sample_comp:
+                    frac    = sample_comp[group]
+                    frac    = frac / 100.0 if frac > 1.0 else frac
+                    n_sub   = sample_size * frac
+                    w_group = w * (n_sub / sample_size) ** 0.5 if n_sub > 0 else 0.0
+                else:
+                    w_group = w * _CROSSTAB_DEFAULT_SCALE
+            else:
+                w_group = w
+
             if group not in delta_sums:
                 delta_sums[group] = {c: 0.0 for c in candidates}
                 delta_weights[group] = {c: 0.0 for c in candidates}
@@ -287,8 +347,8 @@ def _aggregate_crosstabs(
                 if poll_top is None:
                     continue
                 delta = val / 100.0 - poll_top / 100.0
-                delta_sums[group][cand] += w * delta
-                delta_weights[group][cand] += w
+                delta_sums[group][cand]   += w_group * delta
+                delta_weights[group][cand] += w_group
 
     result: dict[str, dict[str, float]] = {}
     for group in delta_sums:
@@ -307,6 +367,8 @@ def _aggregate_favorability(
     polls: list[dict],
     candidates: list[str],
     as_of: str | None = None,
+    election_day: str | None = None,
+    late_poll_multiplier: float = 1.0,
 ) -> dict[str, dict[str, float]]:
     """
     Returns {candidate: {"favorable": f, "unfavorable": u, "aware_rate": ar}}
@@ -317,7 +379,7 @@ def _aggregate_favorability(
     total_w = 0.0
 
     for poll in polls:
-        w = _composite_weight(poll, as_of)
+        w = _composite_weight(poll, as_of, election_day, late_poll_multiplier)
         if w <= 0:
             continue
         fav_data = poll.get("favorability")
@@ -354,6 +416,8 @@ def _aggregate_second_choice(
     polls: list[dict],
     candidates: list[str],
     as_of: str | None = None,
+    election_day: str | None = None,
+    late_poll_multiplier: float = 1.0,
 ) -> dict[str, dict[str, float]]:
     """
     Returns {from_cand: {to_cand: fraction}} weighted average across polls.
@@ -362,7 +426,7 @@ def _aggregate_second_choice(
     sc_weights: dict[str, float] = {c: 0.0 for c in candidates}
 
     for poll in polls:
-        w = _composite_weight(poll, as_of)
+        w = _composite_weight(poll, as_of, election_day, late_poll_multiplier)
         if w <= 0:
             continue
         sc = poll.get("second_choice")
@@ -394,6 +458,90 @@ def _aggregate_second_choice(
 
 # ── Public API ─────────────────────────────────────────────────────────────
 
+def infer_ideology_composition(
+    polls: list[dict],
+    candidates: list[str],
+    ideology_bins: list[str],
+    as_of: str | None = None,
+    election_day: str | None = None,
+    late_poll_multiplier: float = 1.0,
+) -> dict[str, float]:
+    """
+    Estimate the fraction of the electorate in each ideology bin by solving the
+    linear system:  topline[c] = sum_g( share[g] * crosstab[g][c] )
+
+    For each poll that has ideology demographic_crosstabs, we either read the
+    group shares directly from sample_composition (if present) or solve the
+    topline constraint via non-negative least squares.  Results are aggregated
+    as a weighted average across polls.
+
+    Returns {bin_name: fraction} summing to 1.0, or {} if no ideology data.
+    """
+    import numpy as np
+
+    bin_sums   = {b: 0.0 for b in ideology_bins}
+    total_w    = 0.0
+
+    for poll in polls:
+        w = _composite_weight(poll, as_of, election_day, late_poll_multiplier)
+        if w <= 0:
+            continue
+        ideo_ct = poll.get("demographic_crosstabs") or {}
+        bins_present = [b for b in ideology_bins if b in ideo_ct]
+        if not bins_present:
+            continue
+
+        topline     = poll.get("topline", {})
+        sample_comp = poll.get("sample_composition", {})
+
+        # Prefer explicit sample composition when available for ideology bins
+        if all(b in sample_comp for b in bins_present):
+            raw = {b: float(sample_comp[b]) for b in bins_present}
+            total = sum(raw.values())
+            if total > 0:
+                shares = {b: raw[b] / total for b in bins_present}
+            else:
+                continue
+        else:
+            # Solve: topline[c] = sum_b( share[b] * crosstab[b][c] )
+            # Only use candidates that appear in both topline and all ideology bins
+            cands = [
+                c for c in candidates
+                if c in topline and all(c in ideo_ct[b] for b in bins_present)
+            ]
+            if len(cands) < len(bins_present):
+                continue  # underdetermined — skip
+
+            A = np.array([
+                [ideo_ct[b].get(c, 0.0) / 100.0 for b in bins_present]
+                for c in cands
+            ])  # shape (n_cands, n_bins)
+            t = np.array([topline[c] / 100.0 for c in cands])
+
+            # Non-negative least squares via numpy (no scipy needed)
+            # Augment with sum-to-1 constraint weighted heavily
+            constraint_weight = 10.0
+            A_aug = np.vstack([A, constraint_weight * np.ones((1, len(bins_present)))])
+            t_aug = np.append(t, constraint_weight)
+            x, _, _, _ = np.linalg.lstsq(A_aug, t_aug, rcond=None)
+            x = np.clip(x, 0.0, None)
+            if x.sum() < 1e-9:
+                continue
+            x /= x.sum()
+            shares = dict(zip(bins_present, x))
+
+        for b in bins_present:
+            bin_sums[b] += w * shares[b]
+        total_w += w
+
+    if total_w < 1e-9:
+        return {}
+
+    raw = {b: bin_sums[b] / total_w for b in ideology_bins}
+    total = sum(raw.values())
+    return {b: v / total for b, v in raw.items()} if total > 0 else {}
+
+
 def aggregate_polls(config: RaceConfig, as_of: str | None = None) -> dict[str, Any]:
     """
     Aggregate all polls in config up to `as_of` date (or today if None).
@@ -424,16 +572,24 @@ def aggregate_polls(config: RaceConfig, as_of: str | None = None) -> dict[str, A
         polls, getattr(config, "internal_candidate_discount", 0.0)
     )
 
-    baseline = _aggregate_topline(polls, config.candidates, as_of)
+    election_day = config.election_date
+    late_mult = getattr(config, "late_poll_multiplier", 1.0)
+
+    baseline = _aggregate_topline(polls, config.candidates, as_of, election_day, late_mult)
     undecided = max(0.0, 1.0 - sum(baseline.values()))
 
-    sd_crosstabs = _aggregate_crosstabs(polls, config.candidates, baseline, "crosstabs", as_of)
-    demo_crosstabs = _aggregate_crosstabs(polls, config.candidates, baseline, "demographic_crosstabs", as_of)
-    favorability = _aggregate_favorability(polls, config.candidates, as_of)
-    second_choice = _aggregate_second_choice(polls, config.candidates, as_of)
+    sd_crosstabs = _aggregate_crosstabs(polls, config.candidates, baseline, "crosstabs", as_of, election_day, late_mult)
+    demo_crosstabs = _aggregate_crosstabs(polls, config.candidates, baseline, "demographic_crosstabs", as_of, election_day, late_mult)
+    favorability = _aggregate_favorability(polls, config.candidates, as_of, election_day, late_mult)
+    second_choice = _aggregate_second_choice(polls, config.candidates, as_of, election_day, late_mult)
 
     # Count polls with non-zero weight
-    n_used = sum(1 for p in polls if _composite_weight(p, as_of) > 0)
+    n_used = sum(1 for p in polls if _composite_weight(p, as_of, election_day, late_mult) > 0)
+
+    from .precinct_calibration import IDEOLOGY_BINS
+    ideology_composition = infer_ideology_composition(
+        polls, config.candidates, IDEOLOGY_BINS, as_of, election_day, late_mult
+    )
 
     snapshot = {
         "baseline": baseline,
@@ -442,6 +598,7 @@ def aggregate_polls(config: RaceConfig, as_of: str | None = None) -> dict[str, A
         "demographic_crosstabs": demo_crosstabs,
         "favorability_topline": favorability,
         "second_choice": second_choice,
+        "ideology_composition": ideology_composition,
         "as_of": as_of or date.today().isoformat(),
         "n_polls_used": n_used,
     }

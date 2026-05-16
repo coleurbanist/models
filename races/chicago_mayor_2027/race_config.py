@@ -33,14 +33,13 @@ CONFIG = RaceConfig(
     colors={
         "Brandon Johnson": "#00FFF2FF",
         "Alexi Giannoulias": "#FF8800",
-        "Susan Mendoza": "#4CAF50",
+        "Susana Mendoza": "#4CAF50",
     },
 
     ideological_blocs=[
-        
         ["Susana Mendoza"],
         ["Alexi Giannoulias"],
-        ["Brandon Johnson"]["Alexi Giannoulias"],
+        ["Brandon Johnson"],
     ],
     bloc_ideological_positions=[-0.8, 0.2, 0.8],
 
@@ -60,6 +59,25 @@ CONFIG = RaceConfig(
     },
     favorability_blend=0.25,
     second_choice_strength=0.60,
+
+    late_poll_multiplier=6.0,
+
+    bloc_ideology_strength=1,
+
+    ideology_race_weights={
+        "pct_white":    1.0,
+        "pct_asian":    0.9,
+        "pct_hispanic": 0.55,
+        "pct_black":    0.35,
+    },
+
+    # Johnson incumbency advantage among Black voters (mirrors Lightfoot 2023 boost).
+    # Tune via compare_results.py once election results are available.
+    candidate_precinct_boosts={
+        "Brandon Johnson": {"pct_black": 1.1},
+    },
+
+    race_context="chicago_mayor",
 
     # ── Simulation parameters ────────────────────────────────────────────────
     n_sim_district=1_000_000,
@@ -85,6 +103,12 @@ CONFIG = RaceConfig(
     # Chicago BOE posts age + gender breakdowns ~30 min after 7pm; these are used
     # with demographic crosstabs from polls to distribute early votes by candidate.
     banked_vote_mode="chicago",
+
+    # Per-precinct turnout weights averaged from prior Chicago mayoral races.
+    turnout_races=[
+        {"race_type": "chicago_mayor", "election_type": "municipal", "year": 2023},
+        {"race_type": "chicago_mayor", "election_type": "municipal", "year": 2019},
+    ],
 
     # votes.csv not used for Chicago mayor — early votes handled by chicago_early_votes.py
     votes_csv_region_map={},

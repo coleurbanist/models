@@ -1,0 +1,911 @@
+[
+  {
+    "pollster_id": "bendixen",
+    "pollster_name": "Bendixen & Amandi",
+    "field_end": "2022-09-05",
+    "sample_size": 400,
+    "moe": 4.9,
+    "is_internal": true,
+    "commissioned_by": "Chuy García",
+    "notes": "Commissioned by Nuestro PAC (García-supporting PAC), not García's campaign directly. Treated as internal for the weight penalty; no per-candidate discount applied since the campaign did not control the release. García had not yet formally announced. Johnson share estimated at 1% (78% name non-recognition). Quinn (6%), Lopez, Sawyer, Green, King, Buckner excluded from topline; treated as undecided.",
+    "topline": {
+      "Lori Lightfoot": 25.0,
+      "Chuy García": 24.0,
+      "Willie Wilson": 13.0,
+      "Paul Vallas": 9.0,
+      "Brandon Johnson": 1.0
+    },
+    "favorability": {
+      "Chuy García":    {"favorable": 56, "unfavorable": 20},
+      "Willie Wilson":  {"favorable": 49, "unfavorable": 29},
+      "Lori Lightfoot": {"favorable": 47, "unfavorable": 47},
+      "Paul Vallas":    {"favorable": 38, "unfavorable": 17}
+    },
+    "demographic_crosstabs": {
+      "white": {
+        "Chuy García":    23.0,
+        "Lori Lightfoot": 22.0,
+        "Paul Vallas":    16.0
+      },
+      "black": {
+        "Lori Lightfoot": 33.0,
+        "Willie Wilson":  19.0,
+        "Chuy García":    14.0
+      },
+      "hispanic": {
+        "Chuy García":    48.0,
+        "Lori Lightfoot": 23.0
+      },
+      "asian": {
+        "Lori Lightfoot": 33.0,
+        "Willie Wilson":  17.0
+      }
+    },
+    "crosstabs": null,
+    "second_choice": null
+  },
+  {
+    "pollster_id": "ppp",
+    "pollster_name": "Public Policy Polling",
+    "field_end": "2022-10-27",
+    "sample_size": 616,
+    "moe": 4,
+    "is_internal": true,
+    "commissioned_by": "Chuy García",
+    "notes": "Johnson announced on the second day of polling,",
+    "topline": {
+      "Lori Lightfoot": 22.0,
+      "Chuy García": 14.0,
+      "Willie Wilson": 12.0,
+      "Paul Vallas": 8.0,
+      "Brandon Johnson": 3.0,
+      "Sophia King": 3.0
+    },
+    "favorability": {
+      "Lori Lightfoot": {"favorable": 38, "unfavorable": 56}
+    },
+    "crosstabs": null,
+    "second_choice": null
+  },
+   
+  {
+    "pollster_id": "impact",
+    "pollster_name": "Impact Research",
+    "field_end": "2022-11-17",
+    "sample_size": 700,
+    "moe": 3.7,
+    "is_internal": true,
+    "commissioned_by": "Chuy García",
+    "notes":"Commissioned by a union endorsing Garcia",
+    "topline": {
+      "Lori Lightfoot": 18.0,
+      "Chuy García": 25.0,
+      "Willie Wilson": 10.0,
+      "Paul Vallas": 14.0
+    },
+    "favorability": {
+      "Lori Lightfoot": {"unfavorable": 68}
+    },
+    "demographic_crosstabs": null,
+    "crosstabs": null,
+    "second_choice": null
+  },
+  {
+    "pollster_id": "m3",
+    "pollster_name": "M3 Strategies",
+    "field_end": "2022-12-13",
+    "sample_size": 400,
+    "moe": 4.9,
+    "is_internal": false,
+    "topline": {
+      "Lori Lightfoot": 14.5,
+      "Chuy García": 27.6,
+      "Willie Wilson": 13.1,
+      "Paul Vallas": 19.1,
+      "Brandon Johnson": 3.2,
+      "Sophia King": 1.8,
+      "Kam Buckner": 1.4
+    },
+    "favorability": {
+      "Chuy García":    {"favorable": 57.8, "unfavorable": 25.6},
+      "Lori Lightfoot": {"favorable": 24.9, "unfavorable": 73.7},
+      "Paul Vallas":    {"favorable": 39.4, "unfavorable": 30.2}
+    },
+    "demographic_crosstabs": {
+      "white": {
+        "Lori Lightfoot": 8.6,
+        "Chuy García": 25,
+        "Willie Wilson": 4.6,
+        "Paul Vallas": 26.3,
+        "Brandon Johnson": 5.3,
+        "Sophia King": 2,
+        "Kam Buckner": 3.3
+      },
+      "black": {
+        "Lori Lightfoot": 35.2,
+        "Chuy García": 8.3,
+        "Willie Wilson": 24.1,
+        "Paul Vallas": 9.3,
+        "Brandon Johnson": 0,
+        "Sophia King": 1.9,
+        "Kam Buckner": 0.9
+      },
+      "hispanic": {
+        "Lori Lightfoot": 0,
+        "Chuy García": 58.6,
+        "Willie Wilson": 13.8,
+        "Paul Vallas": 12.6,
+        "Brandon Johnson": 3.4,
+        "Sophia King": 0,
+        "Kam Buckner": 0
+      },
+      "age_18_30": {
+        "Sophia King": 0,
+        "Kam Buckner": 0,
+        "Willie Wilson": 0,
+        "Brandon Johnson": 28.6,
+        "Paul Vallas": 21.4,
+        "Lori Lightfoot": 14.3,
+        "Chuy García":28.6
+      },
+      "age_31_45": {
+        "Sophia King": 2.7,
+        "Kam Buckner": 3.6,
+        "Willie Wilson": 11.6,
+        "Brandon Johnson": 3.6,
+        "Paul Vallas": 14.3,
+        "Lori Lightfoot": 6.3,
+        "Chuy García":33.9
+      },
+      "age_46_64": {
+        "Sophia King": 2.6,
+        "Kam Buckner": 0.5,
+        "Willie Wilson": 12.4,
+        "Brandon Johnson": 2.1,
+        "Paul Vallas": 19.6,
+        "Lori Lightfoot": 12.4,
+        "Chuy García":31.4
+      },
+      "age_65_plus": {
+        "Sophia King": 0,
+        "Kam Buckner": 0.9,
+        "Willie Wilson": 17.5,
+        "Brandon Johnson": 1.8,
+        "Paul Vallas": 22.8,
+        "Lori Lightfoot": 26.3,
+        "Chuy García":14.9
+      },
+      "female":{
+        "Sophia King": 2.4,
+        "Kam Buckner": 1.4,
+        "Willie Wilson": 9.1,
+        "Brandon Johnson": 5.3,
+        "Paul Vallas": 21.2,
+        "Lori Lightfoot": 17.8,
+        "Chuy García":22.6
+      },
+      "male":{
+        "Sophia King": 1.3,
+        "Kam Buckner": 1.3,
+        "Willie Wilson": 16.8,
+        "Brandon Johnson": 1.3,
+        "Paul Vallas": 17.3,
+        "Lori Lightfoot": 11.5,
+        "Chuy García":32.3
+      }
+    },
+    "sample_composition":{
+        "male": 47.9,
+        "female": 52.1,
+        "age_18_30": 3.2,
+        "age_31_45": 25.8,
+        "age_46_64": 44.7,
+        "age_65_plus": 26.3,
+        "white": 35.1,
+        "hispanic": 20.1,
+        "black": 24.9
+    },
+    "crosstabs": null,
+    "second_choice": null
+  },
+   {
+    "pollster_id": "impact",
+    "pollster_name": "Impact Research",
+    "field_end": "2022-12-15",
+    "sample_size": 1000,
+    "moe": 3.1,
+    "is_internal": false,
+    "topline": {
+      "Lori Lightfoot": 21.0,
+      "Chuy García": 28.0,
+      "Willie Wilson": 13.0,
+      "Paul Vallas": 12.0
+    },
+    "demographic_crosstabs": null,
+    "crosstabs": null,
+    "second_choice": null
+  },
+   {
+    "pollster_id": "gbao",
+    "pollster_name": "GBAO",
+    "field_end": "2023-01-23",
+    "sample_size": 800,
+    "moe": 3.5,
+    "is_internal": true,
+    "commissioned_by":"Lori Lightfoot",
+    "topline": {
+      "Lori Lightfoot": 25.0,
+      "Chuy García": 18.0,
+      "Willie Wilson": 11.0,
+      "Paul Vallas": 22.0,
+      "Brandon Johnson":9,
+      "Kam Buckner":2,
+      "Sophia King":2
+    },
+    "demographic_crosstabs": null,
+    "crosstabs": null,
+    "second_choice": null
+  },
+   {
+    "pollster_id": "lester",
+    "pollster_name": "Lester and Associates",
+    "field_end": "2023-01-14",
+    "sample_size": 600,
+    "moe": 4,
+    "is_internal": true,
+    "commissioned_by": "Sophia King",
+    "topline": {
+      "Lori Lightfoot": 15.0,
+      "Chuy García": 21.0,
+      "Willie Wilson": 5.0,
+      "Paul Vallas": 10.0,
+      "Brandon Johnson": 8,
+      "Sophia King": 8
+    },
+    "favorability": {
+      "Lori Lightfoot": {"unfavorable": 68}
+    },
+    "demographic_crosstabs": null,
+    "crosstabs": null,
+    "second_choice": null
+  },
+  {
+    "pollster_id": "m3",
+    "pollster_name": "M3 Strategies",
+    "field_end": "2023-01-18",
+    "sample_size": 531,
+    "moe": 4.25,
+    "is_internal": false,
+    "topline": {
+      "Lori Lightfoot": 9.8,
+      "Chuy García": 19.0,
+      "Willie Wilson": 8.5,
+      "Paul Vallas": 26.0,
+      "Brandon Johnson": 12.2,
+      "Sophia King": 0.8,
+      "Kam Buckner": 2.3,
+      "Jamal Green": 1.3
+    },
+    "favorability": {
+      "Chuy García":    {"favorable": 57.8, "unfavorable": 25.6},
+      "Lori Lightfoot": {"favorable": 24.9, "unfavorable": 73.7},
+      "Paul Vallas":    {"favorable": 39.4, "unfavorable": 30.2}
+    },
+    "demographic_crosstabs": {
+      "white": {
+        "Lori Lightfoot": 7,
+        "Chuy García": 15,
+        "Willie Wilson": 2,
+        "Paul Vallas": 31,
+        "Brandon Johnson": 17,
+        "Sophia King": 1,
+        "Kam Buckner": 5,
+        "Jamal Green": 1
+      },
+      "black": {
+        "Lori Lightfoot": 18,
+        "Chuy García": 10,
+        "Willie Wilson": 22,
+        "Paul Vallas": 12,
+        "Brandon Johnson": 9,
+        "Sophia King": 2,
+        "Kam Buckner": 3
+      },
+      "hispanic": {
+        "Lori Lightfoot": 8,
+        "Chuy García": 34,
+        "Willie Wilson": 3,
+        "Paul Vallas": 28,
+        "Brandon Johnson": 12,
+        "Sophia King": 0,
+        "Kam Buckner": 0,
+        "Jamal Green":1
+      },
+      "age_18_30": {
+        "Sophia King": 0,
+        "Kam Buckner": 4,
+        "Willie Wilson": 4,
+        "Brandon Johnson": 27,
+        "Paul Vallas": 8,
+        "Lori Lightfoot": 8,
+        "Chuy García":15,
+        "Jamal Green": 0
+      },
+      "age_31_45": {
+        "Sophia King": 2,
+        "Kam Buckner": 7,
+        "Willie Wilson": 5,
+        "Brandon Johnson": 23,
+        "Paul Vallas": 21,
+        "Lori Lightfoot": 7,
+        "Chuy García":19,
+        "Jamal Green": 2
+      },
+      "age_46_64": {
+        "Jamal Green": 1,
+        "Sophia King": 1,
+        "Kam Buckner": 0,
+        "Willie Wilson": 12,
+        "Brandon Johnson": 10,
+        "Paul Vallas": 28,
+        "Lori Lightfoot": 8,
+        "Chuy García":22
+      },
+      "age_65_plus": {
+        "Jamal Green": 1,
+        "Sophia King": 0,
+        "Kam Buckner": 1,
+        "Willie Wilson": 7,
+        "Brandon Johnson": 4,
+        "Paul Vallas": 30,
+        "Lori Lightfoot": 14,
+        "Chuy García":14
+      },
+      "female":{
+        "Jamal Green": 2, 
+        "Sophia King": 1,
+        "Kam Buckner": 2,
+        "Willie Wilson": 6,
+        "Brandon Johnson": 16,
+        "Paul Vallas": 27,
+        "Lori Lightfoot": 12,
+        "Chuy García":16
+      },
+      "male":{
+        "Jamal Green": 1,
+        "Sophia King": 1,
+        "Kam Buckner": 2,
+        "Willie Wilson": 11,
+        "Brandon Johnson": 8,
+        "Paul Vallas": 27,
+        "Lori Lightfoot": 2,
+        "Chuy García":22
+      }
+    },
+    "sample_composition":{
+        "male": 49,
+        "female": 49,
+        "age_18_30": 5,
+        "age_31_45": 24,
+        "age_46_64": 44,
+        "age_65_plus": 27,
+        "white": 34,
+        "hispanic": 22,
+        "black": 28
+    },
+    "crosstabs": null,
+    "second_choice": null
+  },
+     {
+    "pollster_id": "1983",
+    "pollster_name": "1983 Labs",
+    "field_end": "2023-01-24",
+    "sample_size": 554,
+    "moe": 4.25,
+    "is_internal": false,
+    "topline": {
+      "Lori Lightfoot": 17.11,
+      "Willie Wilson": 14.77,
+      "Paul Vallas": 10.74,
+      "Brandon Johnson": 9.96,
+      "Kam Buckner": 7.65,
+      "Jamal Green":6.85,
+      "Chuy García": 6.66,
+      "Sophia King": 5.61
+    },
+    "demographic_crosstabs": null,
+    "crosstabs": null,
+    "second_choice": null
+  },
+  {
+    "pollster_id": "1983",
+    "pollster_name": "1983 Labs",
+    "field_end": "2023-01-24",
+    "sample_size": 554,
+    "moe": 4.25,
+    "is_internal": false,
+    "topline": {
+      "Lori Lightfoot": 16.25,
+      "Willie Wilson": 13.86,
+      "Paul Vallas": 10.23,
+      "Brandon Johnson": 9.36,
+      "Kam Buckner": 6.07,
+      "Jamal Green":5.97,
+      "Chuy García": 7.46,
+      "Sophia King": 6.17
+    },
+    "demographic_crosstabs": null,
+    "crosstabs": null,
+    "second_choice": null
+  },
+  {
+    "pollster_id":"victory research",
+    "pollster_name": "Victory Research",
+    "field_end":"2023-01-25",
+    "sample_size":806,
+    "moe": 3.45,
+    "is_internal":false,
+    "topline":{
+        "Jamal Green":0.9,
+        "Sophia King": 3.1,
+        "Kam Buckner": 0.7,
+        "Willie Wilson": 11.7,
+        "Brandon Johnson":15.5,
+        "Paul Vallas": 19.5,
+        "Lori Lightfoot": 19.2,
+        "Chuy García":16.6
+    },
+    "demographic_crosstabs":{
+        "male":{
+            "Jamal Green":1.3,
+            "Sophia King": 2.6,
+            "Kam Buckner": 0.8,
+            "Willie Wilson": 13,
+            "Brandon Johnson":15.6,
+            "Paul Vallas": 18.3,
+            "Lori Lightfoot": 17.2,
+            "Chuy García":15.3
+        },
+        "female":{
+            "Jamal Green":0.5,
+            "Sophia King": 3.5,
+            "Kam Buckner": 0.7,
+            "Willie Wilson": 10.5,
+            "Brandon Johnson":15.4,
+            "Paul Vallas": 20.6,
+            "Lori Lightfoot": 21,
+            "Chuy García":17.7
+        },
+        "age_18_30":{
+            "Jamal Green":3,
+            "Sophia King": 2,
+            "Kam Buckner": 1,
+            "Willie Wilson": 9.1,
+            "Brandon Johnson":15.2,
+            "Paul Vallas": 13.1,
+            "Lori Lightfoot": 21.1,
+            "Chuy García":18.2
+        },
+        "age_31_45":{
+            "Jamal Green":1.2,
+            "Sophia King": 3.6,
+            "Kam Buckner": 0,
+            "Willie Wilson": 9.5,
+            "Brandon Johnson":17.2,
+            "Paul Vallas": 20.1,
+            "Lori Lightfoot": 18.3,
+            "Chuy García":18.3
+        },
+        "age_46_64":{
+            "Jamal Green":0.4,
+            "Sophia King": 3.1,
+            "Kam Buckner": 1.1,
+            "Willie Wilson": 13.7,
+            "Brandon Johnson":12.6,
+            "Paul Vallas": 19.8,
+            "Lori Lightfoot": 18.7,
+            "Chuy García":14.7
+        },
+        "age_65_plus":{
+            "Jamal Green":0.4,
+            "Sophia King": 3.1,
+            "Kam Buckner": 0.8,
+            "Willie Wilson": 11.9,
+            "Brandon Johnson":17.7,
+            "Paul Vallas": 21.2,
+            "Lori Lightfoot": 19.6,
+            "Chuy García":16.8
+        },
+        "white":{
+            "Jamal Green":0,
+            "Sophia King": 1.3,
+            "Kam Buckner": 0.3,
+            "Willie Wilson": 5.1,
+            "Brandon Johnson":13,
+            "Paul Vallas": 36.8,
+            "Lori Lightfoot": 17.8,
+            "Chuy García":10.5
+        },
+        "black":{
+            "Jamal Green":1.9,
+            "Sophia King": 7.4,
+            "Kam Buckner": 1.6,
+            "Willie Wilson": 25.2,
+            "Brandon Johnson":17.8,
+            "Paul Vallas": 7.8,
+            "Lori Lightfoot": 22.1,
+            "Chuy García":5.4
+        },
+        "hispanic":{
+            "Jamal Green":0,
+            "Sophia King": 0,
+            "Kam Buckner": 0,
+            "Willie Wilson": 6.4,
+            "Brandon Johnson":11.7,
+            "Paul Vallas": 8.5,
+            "Lori Lightfoot": 17,
+            "Chuy García":43.6
+        },
+        "progressive":{
+          "Jamal Green": 1.7,
+          "Sophia King": 3.3,
+          "Kam Buckner": 0.8,
+          "Willie Wilson": 7.2,
+          "Brandon Johnson": 18.9,
+          "Paul Vallas": 11.4,
+          "Lori Lightfoot": 27.6,
+          "Chuy García": 19.8
+        },
+        "moderate":{
+          "Jamal Green": 0,
+          "Sophia King": 2.2,
+          "Kam Buckner": 0.3,
+          "Willie Wilson": 15.2,
+          "Brandon Johnson": 13.8,
+          "Paul Vallas": 24.7,
+          "Lori Lightfoot": 14.6,
+          "Chuy García": 16.5
+        },
+        "conservative":{
+          "Jamal Green": 1.3,
+          "Sophia King": 6.4,
+          "Kam Buckner": 2.6,
+          "Willie Wilson": 15.4,
+          "Brandon Johnson": 7.7,
+          "Paul Vallas": 32.1,
+          "Lori Lightfoot": 2.6,
+          "Chuy García": 2.3
+        }
+    }
+  },
+  {
+    "pollster_id":"izq",
+    "pollster_name":"IZQ Research",
+    "field_end":"2023-02-02",
+    "sample_size":1040,
+    "moe": 3,
+    "is_internal": false,
+    "topline":{
+        "Willie Wilson":11,
+        "Paul Vallas": 25,
+        "Kam Buckner": 5,
+        "Brandon Johnson":15,
+        "Sophia King": 2,
+        "Jamal Green": 2,
+        "Lori Lightfoot": 12,
+        "Chuy García": 12
+    },
+    "favorability":{
+        "Lori Lightfoot":{"favorable": 26, "unfavorable":72},
+        "Chuy García":{"favorable": 44, "unfavorable": 41},
+        "Brandon Johnson":{"favorable": 35, "unfavorable": 20},
+        "Paul Vallas":{"favorable": 46, "unfavorable": 31}
+    }
+  },
+  {
+    "pollster_id":"lake partners",
+    "pollster_name": "Lake Research Partners",
+    "field_end": "2023-02-09",
+    "is_internal": true,
+    "commissioned_by": "Brandon Johnson",
+    "sample_size":600,
+    "moe": 4,
+    "topline":{
+        "Brandon Johnson": 15,
+        "Chuy García": 11,
+        "Paul Vallas": 25,
+        "Lori Lightfoot": 16,
+        "Willie Wilson": 10,
+        "Sophia King": 2,
+        "Kam Buckner": 1
+    }
+  },
+  {
+    "pollster_id":"mason-dixon",
+    "pollster_name":"Mason-Dixon",
+    "field_end": "2023-02-03",
+    "is_internal": false,
+    "sample_size": 624,
+    "moe": 4,
+    "topline":{
+        "Chuy García": 20,
+        "Paul Vallas": 18,
+        "Lori Lightfoot": 17,
+        "Willie Wilson": 12,
+        "Brandon Johnson": 11,
+        "Jamal Green": 2,
+        "Sophia King": 1,
+        "Kam Buckner": 1
+    }
+  },
+  {
+    "pollster_id": "gbao",
+    "pollster_name": "GBAO",
+    "field_end": "2023-02-07",
+    "sample_size": 501,
+    "moe": 4.4,
+    "is_internal": true,
+    "commissioned_by":"Lori Lightfoot",
+    "topline": {
+      "Lori Lightfoot": 25.0,
+      "Chuy García": 13.0,
+      "Willie Wilson": 14.0,
+      "Paul Vallas": 20.0,
+      "Brandon Johnson":15
+    },
+    "demographic_crosstabs": null,
+    "crosstabs": null,
+    "second_choice": null
+  },
+  {
+    "pollster_id": "m3",
+    "pollster_name":"M3 Strategies",
+    "field_end": "2023-02-08",
+    "sample_size": 722,
+    "moe": 3.65,
+    "is_internal": false,
+    "topline":{
+        "Paul Vallas": 31,
+        "Lori Lightfoot": 16.6,
+        "Brandon Johnson": 16.5,
+        "Chuy García": 13.2
+    }
+  },
+  {
+    "pollster_id":"bsp",
+    "pollster_name": "BSP Research",
+    "field_end": "2023-02-10",
+    "sample_size": 643,
+    "moe": 3.9,
+    "topline":{
+        "Lori Lightfoot": 14,
+        "Chuy García": 17,
+        "Paul Vallas": 19,
+        "Brandon Johnson": 9,
+        "Willie Wilson": 12,
+        "Kam Buckner": 4,
+        "Sophia King": 5,
+        "Jamal Green": 6
+    },
+    "demographic_crosstabs":{
+        "hispanic": {
+            "Lori Lightfoot": 9,
+            "Chuy García": 40,
+            "Paul Vallas": 13,
+            "Brandon Johnson": 7,
+            "Willie Wilson": 6,
+            "Kam Buckner": 3,
+            "Sophia King": 4,
+            "Jamal Green": 3
+        },
+        "black":{
+            "Lori Lightfoot": 23,
+            "Chuy García": 7,
+            "Paul Vallas": 14,
+            "Brandon Johnson": 9,
+            "Willie Wilson": 16,
+            "Kam Buckner": 3,
+            "Sophia King": 2,
+            "Jamal Green": 10
+        },
+        "white":{
+            "Lori Lightfoot": 12,
+            "Chuy García": 13,
+            "Paul Vallas": 25,
+            "Brandon Johnson": 9,
+            "Willie Wilson": 11,
+            "Kam Buckner": 4,
+            "Sophia King": 7,
+            "Jamal Green": 4
+        }
+    }
+  },
+  {
+    "pollster_id":"1983",
+    "pollster_name": "1983 Labs",
+    "field_end": "2023-02-09",
+    "sample_size": 955,
+    "moe": 3.12,
+    "is_internal": false,
+    "topline":{
+        "Lori Lightfoot": 14.83,
+        "Paul Vallas": 13.28,
+        "Willie Wilson": 12.12,
+        "Chuy García": 9.93,
+        "Brandon Johnson": 7.42,
+        "Jamal Green": 6.95,
+        "Sophia King": 5.03,
+        "Kam Buckner": 4.52
+    }
+  },
+  {
+    "pollster_id": "victory research",
+    "pollster_name": "Victory Research",
+    "field_end": "2023-02-15",
+    "sample_size": 806,
+    "moe": 3.45,
+    "is_internal": false,
+    "notes": "Age band '46-60' mapped to age_45_59 (closest available; off by 1 year at each end). 'Over 60' mapped to age_60_plus. Roderick Sawyer (0.7%) and Jamal Green (0.7%) not modeled; absorbed into undecided pool.",
+    "topline": {
+      "Sophia King": 3.6,
+      "Kam Buckner": 0.7,
+      "Willie Wilson": 11.8,
+      "Brandon Johnson": 16.1,
+      "Paul Vallas": 22.8,
+      "Lori Lightfoot": 17.1,
+      "Chuy García": 13.8
+    },
+    "demographic_crosstabs": {
+      "male": {
+        "Jamal Green": 0.5,
+        "Sophia King": 3.4,
+        "Kam Buckner": 1.3,
+        "Willie Wilson": 13.5,
+        "Brandon Johnson": 18.3,
+        "Paul Vallas": 22.2,
+        "Lori Lightfoot": 14.6,
+        "Chuy García": 12.4
+      },
+      "female": {
+        "Jamal Green": 0.9,
+        "Sophia King": 3.7,
+        "Kam Buckner": 0.2,
+        "Willie Wilson": 10.3,
+        "Brandon Johnson": 14.3,
+        "Paul Vallas": 23.4,
+        "Lori Lightfoot": 19.4,
+        "Chuy García": 15.0
+      },
+      "age_18_30": {
+        "Jamal Green": 1.0,
+        "Sophia King": 2.0,
+        "Kam Buckner": 1.0,
+        "Willie Wilson": 9.1,
+        "Brandon Johnson": 14.1,
+        "Paul Vallas": 17.2,
+        "Lori Lightfoot": 18.2,
+        "Chuy García": 18.2
+      },
+      "age_31_45": {
+        "Jamal Green": 1.8,
+        "Sophia King": 5.3,
+        "Kam Buckner": 0.6,
+        "Willie Wilson": 8.9,
+        "Brandon Johnson": 18.9,
+        "Paul Vallas": 22.5,
+        "Lori Lightfoot": 16.0,
+        "Chuy García": 15.4
+      },
+      "age_45_59": {
+        "Jamal Green": 0.4,
+        "Sophia King": 3.2,
+        "Kam Buckner": 0.7,
+        "Willie Wilson": 14.7,
+        "Brandon Johnson": 14.7,
+        "Paul Vallas": 21.6,
+        "Lori Lightfoot": 16.5,
+        "Chuy García": 14.7
+      },
+      "age_60_plus": {
+        "Jamal Green": 0.4,
+        "Sophia King": 3.5,
+        "Kam Buckner": 0.8,
+        "Willie Wilson": 11.2,
+        "Brandon Johnson": 16.5,
+        "Paul Vallas": 26.5,
+        "Lori Lightfoot": 18.1,
+        "Chuy García": 10.0
+      },
+      "black": {
+        "Jamal Green": 1.9,
+        "Sophia King": 8.5,
+        "Kam Buckner": 1.2,
+        "Willie Wilson": 24.8,
+        "Brandon Johnson": 16.7,
+        "Paul Vallas": 9.7,
+        "Lori Lightfoot": 20.2,
+        "Chuy García": 3.1
+      },
+      "white": {
+        "Jamal Green": 0.0,
+        "Sophia King": 1.9,
+        "Kam Buckner": 0.3,
+        "Willie Wilson": 5.7,
+        "Brandon Johnson": 13.3,
+        "Paul Vallas": 43.2,
+        "Lori Lightfoot": 15.9,
+        "Chuy García": 7.3
+      },
+      "hispanic": {
+        "Jamal Green": 0.0,
+        "Sophia King": 0.0,
+        "Kam Buckner": 0.0,
+        "Willie Wilson": 6.9,
+        "Brandon Johnson": 14.4,
+        "Paul Vallas": 11.2,
+        "Lori Lightfoot": 13.8,
+        "Chuy García": 40.4
+      },
+      "progressive":{
+          "Jamal Green": 1.7,
+          "Sophia King": 3.9,
+          "Kam Buckner": 1.1,
+          "Willie Wilson": 5.8,
+          "Brandon Johnson": 20.3,
+          "Paul Vallas": 11.3,
+          "Lori Lightfoot": 25.3,
+          "Chuy García": 17
+        },
+      "moderate":{
+          "Jamal Green": 0,
+          "Sophia King": 3.5,
+          "Kam Buckner": 0.3,
+          "Willie Wilson": 16.5,
+          "Brandon Johnson": 13.6,
+          "Paul Vallas": 27.4,
+          "Lori Lightfoot": 11.9,
+          "Chuy García": 13.3
+        },
+      "conservative":{
+          "Jamal Green": 0,
+          "Sophia King": 2.6,
+          "Kam Buckner": 1.3,
+          "Willie Wilson": 16.7,
+          "Brandon Johnson": 9,
+          "Paul Vallas": 53.8,
+          "Lori Lightfoot": 3.8,
+          "Chuy García": 1.3
+        }
+    },
+    "crosstabs": null,
+    "second_choice": null
+  },
+  {
+    "pollster_id": "m3",
+    "pollster_name": "M3 Strategies",
+    "field_end": "2023-02-21",
+    "sample_size": 416,
+    "moe": 4.6,
+    "is_internal":false,
+    "topline":{
+        "Chuy García": 11.6,
+        "Brandon Johnson": 18,
+        "Lori Lightfoot": 13.6,
+        "Paul Vallas": 32
+    }
+  },
+  {
+    "pollster_id": "victory research",
+    "pollster_name": "Victory Research",
+    "field_end": "2023-02-26",
+    "sample_size": 806,
+    "moe": 3.45,
+    "topline":{
+        "Chuy García": 15.6,
+        "Brandon Johnson": 20.2,
+        "Lori Lightfoot": 18.7,
+        "Paul Vallas": 26.8,
+        "Willie Wilson": 11.4
+    }
+  }
+]

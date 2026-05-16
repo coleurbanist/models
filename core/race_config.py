@@ -29,6 +29,7 @@ class RaceConfig:
     # ------------------------------------------------------------------ polls & modeling
     polls: list[dict[str, Any]]           # poll definition dicts (see poll_weighting.py)
     undecided_allocation: dict[str, float]  # {candidate: weight} for distributing undecideds
+    bloc_ideological_positions: list[float] = field(default_factory=list)  # parallel to ideological_blocs; -1.0 = conservative, +1.0 = progressive
     favorability_blend: float = 0.25        # fraction of undecided weight from favorability
     second_choice_strength: float = 0.60   # fraction of downward deviation routed via SC matrix
 
@@ -37,6 +38,47 @@ class RaceConfig:
     # candidate who paid for it is likely overstated. Set commissioned_by in the
     # poll dict to activate. 0.0 disables the discount entirely.
     internal_candidate_discount: float = 2.0
+
+    # Extra weight multiplier applied to polls fielded within 7 days of election_date.
+    # 1.0 = no boost (default). Values of 2.0–4.0 capture late momentum by concentrating
+    # the effective average toward the most recent polls.
+    late_poll_multiplier: float = 1.0
+
+    # Per-candidate logit boosts tied to a precinct demographic fraction.
+    # Format: {candidate: {pct_col: logit_units}}
+    # The boost applied to a candidate in a given precinct is:
+    #   logit_delta += logit_units * df[pct_col]   (pct_col is a 0–1 fraction)
+    # So logit_units=1.0 means a full logit-unit boost in a 100% demographic precinct,
+    # tapering linearly to zero. Useful for incumbency effects tied to a specific community.
+    # Example: {"Lori Lightfoot": {"pct_black": 0.8}}
+    candidate_precinct_boosts: dict[str, dict[str, float]] = field(default_factory=dict)
+
+    # Per-racial-group attenuation of the ideology signal in logit space.
+    # Maps a pct_col (e.g. "pct_black") to a 0–1 scale factor applied to the
+    # ideology delta in compute_precinct_shares. Scale 1.0 = full ideology effect;
+    # 0.0 = ideology signal completely suppressed for that group.
+    # Precinct-level factor = weighted average across racial fractions; any
+    # unaccounted fraction receives scale 1.0.
+    # Empty dict (default) = no attenuation — ideology applies uniformly.
+    # Example: {"pct_black": 0.35, "pct_hispanic": 0.55, "pct_white": 1.0}
+    ideology_race_weights: dict[str, float] = field(default_factory=dict)
+
+    # Progressive-score amplification of the ideology signal.
+    # Multiplies the ideology delta by (1 + slope × score_z), where score_z is
+    # the z-scored progressive score across all precincts. Positive slope means:
+    #   - High-prog precincts: ideology signal amplified (ideological voters sort cleanly)
+    #   - Conservative precincts: ideology signal dampened (other factors dominate)
+    # Applied multiplicatively on top of ideology_race_weights.
+    # 0.0 = flat (default). Start around 0.2 and tune via compare_results.py.
+    ideology_prog_slope: float = 0.0
+
+    # Strength of the ideological bloc × precinct progressive score adjustment.
+    # 0.0 = disabled (default). When > 0, each candidate's precinct estimate receives a
+    # logit boost proportional to (z-scored score_pp) × (their bloc's ideological position).
+    # 1.0 ≈ ±1 logit unit swing from the most conservative to the most progressive precinct
+    # for a candidate at the ideological extreme (|bloc_pos| = 1.0).
+    # Requires bloc_ideological_positions to be set and race_context to be non-None.
+    bloc_ideology_strength: float = 0.0
 
     # Viability scaling for undecided allocation.
     # Each candidate's undecided weight is multiplied by baseline_share^alpha before
@@ -135,6 +177,19 @@ class RaceConfig:
     # Arbitrary constraints consumed by precinct_pipeline.py step 3 (undecided allocation).
     # Example: {"biss_evanston_undecided_penalty": 0.35}
     extra_constraints: dict[str, Any] = field(default_factory=dict)
+
+    # Historical races used to estimate per-precinct turnout weights.
+    # Each entry is a dict with keys race_type, election_type, year.
+    # Turnout for each precinct is averaged across all listed races and used
+    # as turnout_weight in the precinct pipeline (overrides the flat 100 default).
+    # Example: [{"race_type": "chicago_mayor", "election_type": "municipal", "year": 2019}]
+    turnout_races: list[dict] = field(default_factory=list)
+
+    # ------------------------------------------------------------------ multi-round poll files
+    # When set, polls are loaded at runtime from these JSON files rather than
+    # from config.polls directly.  Use --round round1|runoff to select.
+    polls_round1_path: Path | None = None
+    polls_runoff_path: Path | None = None
 
     # ------------------------------------------------------------------ pollster ratings
     # Path to pollster_ratings.json produced by pollster_calibration.py.

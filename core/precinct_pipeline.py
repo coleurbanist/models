@@ -16,6 +16,8 @@ from typing import Any
 import numpy as np
 import pandas as pd
 
+import sqlite3
+
 from .race_config import RaceConfig
 from . import simulator_runner
 from .precinct_calibration import (
@@ -31,6 +33,66 @@ try:
 except ImportError:
     HAS_GEO = False
     warnings.warn("geopandas not available — shapefile operations will fail")
+
+
+# ── Historical turnout loading ────────────────────────────────────────────
+
+def _load_historical_turnout(df: pd.DataFrame, config: RaceConfig) -> pd.DataFrame:
+    """
+    Replace flat turnout_weight=100 with per-precinct average from historical races.
+    Queries election_results, sums all candidate votes per precinct per race,
+    then averages across races. Precincts with no historical data keep their
+    existing weight.
+    """
+    from .db import DB_PATH
+
+    turnout_races = getattr(config, "turnout_races", [])
+    if not turnout_races:
+        return df
+
+    jf_col = next(
+        (c for c in ["joinfield", "JoinField", "JOINFIELD"] if c in df.columns), None
+    )
+    if jf_col is None:
+        return df
+
+    try:
+        conn = sqlite3.connect(DB_PATH)
+        race_totals: list[pd.DataFrame] = []
+        for race in turnout_races:
+            rt = conn.execute("""
+                SELECT JoinField, SUM(votes) AS turnout
+                FROM election_results
+                WHERE race_type = ? AND election_type = ? AND year = ?
+                GROUP BY JoinField
+            """, (race["race_type"], race["election_type"], race["year"])).fetchall()
+            if rt:
+                race_totals.append(
+                    pd.DataFrame(rt, columns=["JoinField", "turnout"])
+                    .assign(_jf=lambda d: d["JoinField"].str.strip().str.upper())
+                )
+        conn.close()
+    except Exception as exc:
+        warnings.warn(f"Could not load historical turnout: {exc}")
+        return df
+
+    if not race_totals:
+        return df
+
+    combined = pd.concat(race_totals).groupby("_jf")["turnout"].mean().reset_index()
+    combined.columns = ["_jf", "_hist_turnout"]
+
+    df = df.copy()
+    df["_jf"] = df[jf_col].str.strip().str.upper()
+    df = df.merge(combined, on="_jf", how="left")
+    mask = df["_hist_turnout"].notna()
+    df.loc[mask, "turnout_weight"] = df.loc[mask, "_hist_turnout"]
+    df = df.drop(columns=["_jf", "_hist_turnout"])
+    n_enriched = mask.sum()
+    n_total    = len(df)
+    warnings.warn(f"Historical turnout loaded for {n_enriched}/{n_total} precincts "
+                  f"(avg {df['turnout_weight'].mean():.0f} votes/precinct)", stacklevel=2)
+    return df
 
 
 # ── JoinField normalization ────────────────────────────────────────────────
@@ -58,12 +120,13 @@ def assign_region_from_joinfield(jf: str, joinfield_format: str) -> str:
             return "McHenry County"
         return "Suburban Cook"
     elif joinfield_format == "CHICAGO":
-        # "WARD XX PRECINCT YY" — extract ward number for ward-group lookup
-        parts = jf.split()
+        # JoinField: "CITY OF CHICAGO:WARD 01 PRECINCT 01" — strip prefix first
+        suffix = jf.split(":", 1)[-1].strip()
+        parts = suffix.split()
         if len(parts) >= 2 and parts[0] == "WARD":
             try:
                 ward = int(parts[1])
-                return f"Ward {ward:02d}"
+                return f"Ward {ward}"
             except ValueError:
                 pass
         return "Unknown"
@@ -148,16 +211,20 @@ def step1_demographic_modeling(
     baseline       = polling["baseline"]
 
     # ── Path 1: logit demographic calibration ────────────────────────────
-    if demo_crosstabs and (config.race_context is not None or any(
-        f"pct_{g}" in df.columns for g in ["black", "hispanic", "white", "asian"]
-    )):
+    if demo_crosstabs:
         enriched = enrich_precinct_df(df, config)
         if has_usable_crosstabs(demo_crosstabs, enriched):
             shares = compute_precinct_shares(
-                enriched, demo_crosstabs, baseline, config.candidates
+                enriched, demo_crosstabs, baseline, config.candidates,
+                ideological_blocs=config.ideological_blocs,
+                bloc_ideological_positions=getattr(config, "bloc_ideological_positions", []),
+                bloc_ideology_strength=getattr(config, "bloc_ideology_strength", 0.0),
+                candidate_precinct_boosts=getattr(config, "candidate_precinct_boosts", {}),
+                ideology_race_weights=getattr(config, "ideology_race_weights", {}),
+                ideology_prog_slope=getattr(config, "ideology_prog_slope", 0.0),
             )
             for c in config.candidates:
-                df[f"demo_est_{c}"] = shares[c].values
+                df[f"demo_est_{c}"] = shares[c].values / 100.0
             # Carry enriched demographic columns forward for downstream steps
             for col in ["pct_black", "pct_hispanic", "pct_white", "pct_asian",
                         "score_pp", "total"]:
@@ -287,6 +354,12 @@ def step3_allocate_undecideds(
         precinct_alloc = compute_precinct_shares(
             df, demo_crosstabs, prior, config.candidates,
             weight_col="turnout_weight",
+            ideological_blocs=config.ideological_blocs,
+            bloc_ideological_positions=getattr(config, "bloc_ideological_positions", []),
+            bloc_ideology_strength=getattr(config, "bloc_ideology_strength", 0.0),
+            candidate_precinct_boosts=getattr(config, "candidate_precinct_boosts", {}),
+            ideology_race_weights=getattr(config, "ideology_race_weights", {}),
+            ideology_prog_slope=getattr(config, "ideology_prog_slope", 0.0),
         )
         for c in config.candidates:
             df[f"final_est_{c}"] = (
@@ -526,12 +599,31 @@ def run_precinct_pipeline(
                     df = df.rename(columns={alt: "joinfield"})
                     break
     else:
-        warnings.warn(f"Precinct CSV not found at {precinct_csv_path}; starting from empty DataFrame")
-        df = pd.DataFrame({"joinfield": []})
+        shp_path = config.precinct_shapefile()
+        if HAS_GEO and shp_path.exists():
+            try:
+                shp = _load_shapefile(shp_path)
+                for col in ["JoinField", "JOINFIELD", "joinfield", "JOIN_FIELD"]:
+                    if col in shp.columns:
+                        df = pd.DataFrame({"joinfield": shp[col].astype(str).tolist()})
+                        break
+                else:
+                    warnings.warn("No JoinField column in precinct shapefile; starting empty")
+                    df = pd.DataFrame({"joinfield": []})
+            except Exception as e:
+                warnings.warn(f"Could not load precinct shapefile ({e}); starting empty")
+                df = pd.DataFrame({"joinfield": []})
+        else:
+            warnings.warn(f"Precinct CSV not found at {precinct_csv_path}; starting from empty DataFrame")
+            df = pd.DataFrame({"joinfield": []})
 
     # Ensure turnout_weight column exists
     if "turnout_weight" not in df.columns:
         df["turnout_weight"] = 100.0
+
+    # Replace flat weights with historical per-precinct turnout if configured
+    if getattr(config, "turnout_races", []):
+        df = _load_historical_turnout(df, config)
 
     # Load crosstab shapefile if configured
     crosstab_gdf = None

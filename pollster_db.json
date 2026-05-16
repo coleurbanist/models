@@ -132,6 +132,18 @@
     "votehub_pct_within_moe": null,
     "votehub_house_effect_lean":null,
     "house_effect":{}
+  },
+  "bendixen":{
+    "name":"Bendixen & Amandi International",
+    "silver_grade":"B/C",
+    "silver_house_effect_lean":0.09,
+    "votehub_pct_within_moe": null,
+    "votehub_house_effect_lean":null,
+    "house_effect":{}
+  },
+  "1983":{
+    "name": "1983 labs",
+    "manual_grade": "D"
   }
 
 }

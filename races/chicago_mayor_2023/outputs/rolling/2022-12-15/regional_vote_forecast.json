@@ -1,0 +1,1252 @@
+{
+  "Ward 1": {
+    "expected_turnout": 2600.0,
+    "turnout_share_pct": 0.020139426800929512,
+    "num_precincts": 26,
+    "vote_shares": {
+      "Paul Vallas": 0.00014986862057964846,
+      "Brandon Johnson": 0.14775641275590645,
+      "Lori Lightfoot": 0.006248863485210864,
+      "Chuy Garc\u00eda": 0.6302680683299952,
+      "Willie Wilson": 0.01840080430613476,
+      "Kam Buckner": 0.10142349514605743,
+      "Sophia King": 0.019125323874911983,
+      "Jamal Green": 0.014860922241960759
+    },
+    "expected_votes": {
+      "Paul Vallas": 0.38965841350708597,
+      "Brandon Johnson": 384.16667316535677,
+      "Lori Lightfoot": 16.247045061548246,
+      "Chuy Garc\u00eda": 1638.6969776579874,
+      "Willie Wilson": 47.842091195950374,
+      "Kam Buckner": 263.7010873797493,
+      "Sophia King": 49.72584207477116,
+      "Jamal Green": 38.638397829097975
+    }
+  },
+  "Ward 2": {
+    "expected_turnout": 2500.0,
+    "turnout_share_pct": 0.019364833462432222,
+    "num_precincts": 25,
+    "vote_shares": {
+      "Paul Vallas": 0.7941183935567558,
+      "Brandon Johnson": 0.0003257225585548011,
+      "Lori Lightfoot": 8.300626673856597e-05,
+      "Chuy Garc\u00eda": 6.408115502761143e-05,
+      "Willie Wilson": 0.08751667140227529,
+      "Kam Buckner": 0.00237329518802351,
+      "Sophia King": 0.025036412771065584,
+      "Jamal Green": 0.016350739119448263
+    },
+    "expected_votes": {
+      "Paul Vallas": 1985.2959838918896,
+      "Brandon Johnson": 0.8143063963870028,
+      "Lori Lightfoot": 0.20751566684641493,
+      "Chuy Garc\u00eda": 0.1602028875690286,
+      "Willie Wilson": 218.79167850568822,
+      "Kam Buckner": 5.933237970058775,
+      "Sophia King": 62.59103192766396,
+      "Jamal Green": 40.87684779862066
+    }
+  },
+  "Ward 3": {
+    "expected_turnout": 2700.0,
+    "turnout_share_pct": 0.020914020139426802,
+    "num_precincts": 27,
+    "vote_shares": {
+      "Paul Vallas": 0.11922567909591475,
+      "Brandon Johnson": 0.008004845433274685,
+      "Lori Lightfoot": 0.4150185826604128,
+      "Chuy Garc\u00eda": 0.12377982188110193,
+      "Willie Wilson": 0.21220454824545815,
+      "Kam Buckner": 0.011962347780968099,
+      "Sophia King": 0.038022031529045194,
+      "Jamal Green": 0.0245441367324974
+    },
+    "expected_votes": {
+      "Paul Vallas": 321.9093335589698,
+      "Brandon Johnson": 21.61308266984165,
+      "Lori Lightfoot": 1120.5501731831146,
+      "Chuy Garc\u00eda": 334.2055190789752,
+      "Willie Wilson": 572.952280262737,
+      "Kam Buckner": 32.298339008613866,
+      "Sophia King": 102.65948512842202,
+      "Jamal Green": 66.26916917774298
+    }
+  },
+  "Ward 4": {
+    "expected_turnout": 2800.0,
+    "turnout_share_pct": 0.021688613477924088,
+    "num_precincts": 28,
+    "vote_shares": {
+      "Paul Vallas": 0.04061253888053311,
+      "Brandon Johnson": 0.021390522745997474,
+      "Lori Lightfoot": 0.4191577695910608,
+      "Chuy Garc\u00eda": 0.24954806660459464,
+      "Willie Wilson": 0.15772923877885425,
+      "Kam Buckner": 0.019144393997714455,
+      "Sophia King": 0.028036483682975635,
+      "Jamal Green": 0.01848177810858629
+    },
+    "expected_votes": {
+      "Paul Vallas": 113.71510886549271,
+      "Brandon Johnson": 59.89346368879293,
+      "Lori Lightfoot": 1173.6417548549703,
+      "Chuy Garc\u00eda": 698.734586492865,
+      "Willie Wilson": 441.6418685807919,
+      "Kam Buckner": 53.60430319360047,
+      "Sophia King": 78.50215431233178,
+      "Jamal Green": 51.74897870404161
+    }
+  },
+  "Ward 5": {
+    "expected_turnout": 2500.0,
+    "turnout_share_pct": 0.019364833462432222,
+    "num_precincts": 25,
+    "vote_shares": {
+      "Paul Vallas": 9.612541971178486e-05,
+      "Brandon Johnson": 0.06338647704589126,
+      "Lori Lightfoot": 0.3997729944728247,
+      "Chuy Garc\u00eda": 0.2957810757770631,
+      "Willie Wilson": 0.12819994304389132,
+      "Kam Buckner": 0.026775501592277408,
+      "Sophia King": 0.02178855564471885,
+      "Jamal Green": 0.015576380941607598
+    },
+    "expected_votes": {
+      "Paul Vallas": 0.24031354927946216,
+      "Brandon Johnson": 158.46619261472816,
+      "Lori Lightfoot": 999.4324861820618,
+      "Chuy Garc\u00eda": 739.4526894426577,
+      "Willie Wilson": 320.4998576097283,
+      "Kam Buckner": 66.93875398069352,
+      "Sophia King": 54.47138911179712,
+      "Jamal Green": 38.940952354019
+    }
+  },
+  "Ward 6": {
+    "expected_turnout": 2700.0,
+    "turnout_share_pct": 0.020914020139426802,
+    "num_precincts": 27,
+    "vote_shares": {
+      "Paul Vallas": 8.882749947731657e-05,
+      "Brandon Johnson": 0.0016134052648538678,
+      "Lori Lightfoot": 0.6549296374270527,
+      "Chuy Garc\u00eda": 0.038323021840648834,
+      "Willie Wilson": 0.21100286323923145,
+      "Kam Buckner": 0.004697996097396595,
+      "Sophia King": 0.02139964953363654,
+      "Jamal Green": 0.01585314774775359
+    },
+    "expected_votes": {
+      "Paul Vallas": 0.23983424858875474,
+      "Brandon Johnson": 4.356194215105443,
+      "Lori Lightfoot": 1768.3100210530422,
+      "Chuy Garc\u00eda": 103.47215896975185,
+      "Willie Wilson": 569.7077307459249,
+      "Kam Buckner": 12.684589462970807,
+      "Sophia King": 57.77905374081866,
+      "Jamal Green": 42.80349891893469
+    }
+  },
+  "Ward 7": {
+    "expected_turnout": 3100.0,
+    "turnout_share_pct": 0.024012393493415957,
+    "num_precincts": 31,
+    "vote_shares": {
+      "Paul Vallas": 0.00014021701930216123,
+      "Brandon Johnson": 0.0019126402843390314,
+      "Lori Lightfoot": 0.6183172524880229,
+      "Chuy Garc\u00eda": 0.07555394392889084,
+      "Willie Wilson": 0.21021092441096204,
+      "Kam Buckner": 0.00522849422994927,
+      "Sophia King": 0.02178163445069168,
+      "Jamal Green": 0.017216245562197852
+    },
+    "expected_votes": {
+      "Paul Vallas": 0.43467275983669984,
+      "Brandon Johnson": 5.929184881450998,
+      "Lori Lightfoot": 1916.783482712871,
+      "Chuy Garc\u00eda": 234.2172261795616,
+      "Willie Wilson": 651.6538656739823,
+      "Kam Buckner": 16.208332112842736,
+      "Sophia King": 67.52306679714421,
+      "Jamal Green": 53.370361242813345
+    }
+  },
+  "Ward 8": {
+    "expected_turnout": 3000.0,
+    "turnout_share_pct": 0.023237800154918668,
+    "num_precincts": 30,
+    "vote_shares": {
+      "Paul Vallas": 4.959237027193884e-05,
+      "Brandon Johnson": 0.001179950519498256,
+      "Lori Lightfoot": 0.6650141338865108,
+      "Chuy Garc\u00eda": 0.014337602416185084,
+      "Willie Wilson": 0.2224100996888382,
+      "Kam Buckner": 0.004375880346152527,
+      "Sophia King": 0.021696213639528537,
+      "Jamal Green": 0.01581983640735928
+    },
+    "expected_votes": {
+      "Paul Vallas": 0.14877711081581652,
+      "Brandon Johnson": 3.539851558494768,
+      "Lori Lightfoot": 1995.0424016595323,
+      "Chuy Garc\u00eda": 43.012807248555255,
+      "Willie Wilson": 667.2302990665146,
+      "Kam Buckner": 13.12764103845758,
+      "Sophia King": 65.08864091858561,
+      "Jamal Green": 47.459509222077834
+    }
+  },
+  "Ward 9": {
+    "expected_turnout": 3000.0,
+    "turnout_share_pct": 0.023237800154918668,
+    "num_precincts": 30,
+    "vote_shares": {
+      "Paul Vallas": 0.00010802063918509529,
+      "Brandon Johnson": 0.0015105222317152727,
+      "Lori Lightfoot": 0.6393542534321021,
+      "Chuy Garc\u00eda": 0.027834882335071153,
+      "Willie Wilson": 0.23163005895910685,
+      "Kam Buckner": 0.004757018499322567,
+      "Sophia King": 0.0226089930483228,
+      "Jamal Green": 0.017033947400550482
+    },
+    "expected_votes": {
+      "Paul Vallas": 0.32406191755528585,
+      "Brandon Johnson": 4.531566695145818,
+      "Lori Lightfoot": 1918.0627602963061,
+      "Chuy Garc\u00eda": 83.50464700521346,
+      "Willie Wilson": 694.8901768773205,
+      "Kam Buckner": 14.2710554979677,
+      "Sophia King": 67.8269791449684,
+      "Jamal Green": 51.10184220165144
+    }
+  },
+  "Ward 10": {
+    "expected_turnout": 2500.0,
+    "turnout_share_pct": 0.019364833462432222,
+    "num_precincts": 25,
+    "vote_shares": {
+      "Paul Vallas": 0.0889499632390157,
+      "Brandon Johnson": 0.008234562611863321,
+      "Lori Lightfoot": 0.11985688950202111,
+      "Chuy Garc\u00eda": 0.5110185358659963,
+      "Willie Wilson": 0.16583463127356507,
+      "Kam Buckner": 0.008160086830089902,
+      "Sophia King": 0.023390947246137783,
+      "Jamal Green": 0.021875432801065058
+    },
+    "expected_votes": {
+      "Paul Vallas": 222.37490809753925,
+      "Brandon Johnson": 20.5864065296583,
+      "Lori Lightfoot": 299.6422237550528,
+      "Chuy Garc\u00eda": 1277.546339664991,
+      "Willie Wilson": 414.58657818391265,
+      "Kam Buckner": 20.400217075224756,
+      "Sophia King": 58.477368115344454,
+      "Jamal Green": 54.68858200266265
+    }
+  },
+  "Ward 11": {
+    "expected_turnout": 2300.0,
+    "turnout_share_pct": 0.017815646785437646,
+    "num_precincts": 23,
+    "vote_shares": {
+      "Paul Vallas": 0.4102784563896008,
+      "Brandon Johnson": 0.01586923037522029,
+      "Lori Lightfoot": 0.006967516405095333,
+      "Chuy Garc\u00eda": 0.2070170925009117,
+      "Willie Wilson": 0.21501764037341337,
+      "Kam Buckner": 0.015223209284367652,
+      "Sophia King": 0.04437894174953499,
+      "Jamal Green": 0.02401505203842039
+    },
+    "expected_votes": {
+      "Paul Vallas": 943.6404496960819,
+      "Brandon Johnson": 36.49922986300667,
+      "Lori Lightfoot": 16.025287731719267,
+      "Chuy Garc\u00eda": 476.1393127520969,
+      "Willie Wilson": 494.54057285885074,
+      "Kam Buckner": 35.0133813540456,
+      "Sophia King": 102.07156602393047,
+      "Jamal Green": 55.2346196883669
+    }
+  },
+  "Ward 12": {
+    "expected_turnout": 2200.0,
+    "turnout_share_pct": 0.017041053446940357,
+    "num_precincts": 22,
+    "vote_shares": {
+      "Paul Vallas": 8.573534624636386e-05,
+      "Brandon Johnson": 0.07500870261989755,
+      "Lori Lightfoot": 9.762007859947314e-05,
+      "Chuy Garc\u00eda": 0.7680705736439328,
+      "Willie Wilson": 0.051177553336477076,
+      "Kam Buckner": 0.025170412391508797,
+      "Sophia King": 0.012598791553249172,
+      "Jamal Green": 0.010585308230538475
+    },
+    "expected_votes": {
+      "Paul Vallas": 0.18861776174200048,
+      "Brandon Johnson": 165.0191457637746,
+      "Lori Lightfoot": 0.2147641729188409,
+      "Chuy Garc\u00eda": 1689.7552620166523,
+      "Willie Wilson": 112.59061734024957,
+      "Kam Buckner": 55.37490726131935,
+      "Sophia King": 27.717341417148177,
+      "Jamal Green": 23.287678107184647
+    }
+  },
+  "Ward 13": {
+    "expected_turnout": 4000.0,
+    "turnout_share_pct": 0.030983733539891558,
+    "num_precincts": 40,
+    "vote_shares": {
+      "Paul Vallas": 0.4337942822394407,
+      "Brandon Johnson": 0.004585736448236591,
+      "Lori Lightfoot": 0.00010108425936894182,
+      "Chuy Garc\u00eda": 0.2717943327845746,
+      "Willie Wilson": 0.17144815026024085,
+      "Kam Buckner": 0.007515060445740825,
+      "Sophia King": 0.0263215464303702,
+      "Jamal Green": 0.024039038627335366
+    },
+    "expected_votes": {
+      "Paul Vallas": 1735.177128957763,
+      "Brandon Johnson": 18.342945792946363,
+      "Lori Lightfoot": 0.40433703747576727,
+      "Chuy Garc\u00eda": 1087.1773311382983,
+      "Willie Wilson": 685.7926010409634,
+      "Kam Buckner": 30.0602417829633,
+      "Sophia King": 105.28618572148079,
+      "Jamal Green": 96.15615450934146
+    }
+  },
+  "Ward 14": {
+    "expected_turnout": 1500.0,
+    "turnout_share_pct": 0.011618900077459334,
+    "num_precincts": 15,
+    "vote_shares": {
+      "Paul Vallas": 0.00014266587704875357,
+      "Brandon Johnson": 0.06264479268589138,
+      "Lori Lightfoot": 0.004933744207939122,
+      "Chuy Garc\u00eda": 0.7861366050932981,
+      "Willie Wilson": 0.050602670251677785,
+      "Kam Buckner": 0.01099150881491666,
+      "Sophia King": 0.011286084628749679,
+      "Jamal Green": 0.012724935464522129
+    },
+    "expected_votes": {
+      "Paul Vallas": 0.21399881557313036,
+      "Brandon Johnson": 93.96718902883707,
+      "Lori Lightfoot": 7.400616311908683,
+      "Chuy Garc\u00eda": 1179.2049076399471,
+      "Willie Wilson": 75.90400537751668,
+      "Kam Buckner": 16.48726322237499,
+      "Sophia King": 16.92912694312452,
+      "Jamal Green": 19.087403196783193
+    }
+  },
+  "Ward 15": {
+    "expected_turnout": 2000.0,
+    "turnout_share_pct": 0.015491866769945779,
+    "num_precincts": 20,
+    "vote_shares": {
+      "Paul Vallas": 0.11322685798960368,
+      "Brandon Johnson": 0.0499896867105276,
+      "Lori Lightfoot": 0.09524358690666124,
+      "Chuy Garc\u00eda": 0.5489489475307732,
+      "Willie Wilson": 0.09029580443346992,
+      "Kam Buckner": 0.013173599988404132,
+      "Sophia King": 0.0145048619295807,
+      "Jamal Green": 0.014178712022859962
+    },
+    "expected_votes": {
+      "Paul Vallas": 226.45371597920735,
+      "Brandon Johnson": 99.9793734210552,
+      "Lori Lightfoot": 190.48717381332247,
+      "Chuy Garc\u00eda": 1097.8978950615463,
+      "Willie Wilson": 180.59160886693985,
+      "Kam Buckner": 26.347199976808266,
+      "Sophia King": 29.0097238591614,
+      "Jamal Green": 28.357424045719924
+    }
+  },
+  "Ward 16": {
+    "expected_turnout": 2500.0,
+    "turnout_share_pct": 0.019364833462432222,
+    "num_precincts": 25,
+    "vote_shares": {
+      "Paul Vallas": 9.673349118952067e-05,
+      "Brandon Johnson": 0.0032770136404835235,
+      "Lori Lightfoot": 0.463013028723487,
+      "Chuy Garc\u00eda": 0.2048291348929803,
+      "Willie Wilson": 0.2289341630715542,
+      "Kam Buckner": 0.006302353457915649,
+      "Sophia King": 0.022644555550457315,
+      "Jamal Green": 0.019885961017589823
+    },
+    "expected_votes": {
+      "Paul Vallas": 0.24183372797380168,
+      "Brandon Johnson": 8.192534101208809,
+      "Lori Lightfoot": 1157.5325718087174,
+      "Chuy Garc\u00eda": 512.0728372324508,
+      "Willie Wilson": 572.3354076788855,
+      "Kam Buckner": 15.755883644789122,
+      "Sophia King": 56.61138887614329,
+      "Jamal Green": 49.71490254397455
+    }
+  },
+  "Ward 17": {
+    "expected_turnout": 2900.0,
+    "turnout_share_pct": 0.022463206816421378,
+    "num_precincts": 29,
+    "vote_shares": {
+      "Paul Vallas": 7.023778289926344e-05,
+      "Brandon Johnson": 0.0016752056078723643,
+      "Lori Lightfoot": 0.6098099154541362,
+      "Chuy Garc\u00eda": 0.0677626890931196,
+      "Willie Wilson": 0.22386604205689054,
+      "Kam Buckner": 0.004535514640290064,
+      "Sophia King": 0.021030575142617736,
+      "Jamal Green": 0.01669378342062714
+    },
+    "expected_votes": {
+      "Paul Vallas": 0.20368957040786398,
+      "Brandon Johnson": 4.858096262829856,
+      "Lori Lightfoot": 1768.448754816995,
+      "Chuy Garc\u00eda": 196.51179837004682,
+      "Willie Wilson": 649.2115219649826,
+      "Kam Buckner": 13.152992456841186,
+      "Sophia King": 60.988667913591435,
+      "Jamal Green": 48.41197191981871
+    }
+  },
+  "Ward 18": {
+    "expected_turnout": 2600.0,
+    "turnout_share_pct": 0.020139426800929512,
+    "num_precincts": 26,
+    "vote_shares": {
+      "Paul Vallas": 0.009160857730835692,
+      "Brandon Johnson": 0.005239585888434372,
+      "Lori Lightfoot": 0.3737392815704722,
+      "Chuy Garc\u00eda": 0.2896446335286084,
+      "Willie Wilson": 0.21931623467122396,
+      "Kam Buckner": 0.008259014567785529,
+      "Sophia King": 0.02603397234633716,
+      "Jamal Green": 0.022582485021182895
+    },
+    "expected_votes": {
+      "Paul Vallas": 23.818230100172798,
+      "Brandon Johnson": 13.622923309929366,
+      "Lori Lightfoot": 971.7221320832277,
+      "Chuy Garc\u00eda": 753.0760471743819,
+      "Willie Wilson": 570.2222101451823,
+      "Kam Buckner": 21.473437876242375,
+      "Sophia King": 67.68832810047661,
+      "Jamal Green": 58.714461055075525
+    }
+  },
+  "Ward 19": {
+    "expected_turnout": 3600.0,
+    "turnout_share_pct": 0.027885360185902403,
+    "num_precincts": 36,
+    "vote_shares": {
+      "Paul Vallas": 0.5523729819800682,
+      "Brandon Johnson": 0.002130888552910965,
+      "Lori Lightfoot": 0.16095922453989686,
+      "Chuy Garc\u00eda": 0.018194608318637055,
+      "Willie Wilson": 0.14833405438830316,
+      "Kam Buckner": 0.005101940214078063,
+      "Sophia King": 0.02794801009345572,
+      "Jamal Green": 0.01972891032993839
+    },
+    "expected_votes": {
+      "Paul Vallas": 1988.5427351282456,
+      "Brandon Johnson": 7.671198790479473,
+      "Lori Lightfoot": 579.4532083436287,
+      "Chuy Garc\u00eda": 65.5005899470934,
+      "Willie Wilson": 534.0025957978913,
+      "Kam Buckner": 18.366984770681025,
+      "Sophia King": 100.6128363364406,
+      "Jamal Green": 71.0240771877782
+    }
+  },
+  "Ward 20": {
+    "expected_turnout": 2300.0,
+    "turnout_share_pct": 0.017815646785437646,
+    "num_precincts": 23,
+    "vote_shares": {
+      "Paul Vallas": 6.106664197456078e-05,
+      "Brandon Johnson": 0.018380916386654147,
+      "Lori Lightfoot": 0.4584108107553758,
+      "Chuy Garc\u00eda": 0.2672515680163738,
+      "Willie Wilson": 0.16008688273858132,
+      "Kam Buckner": 0.011404179753587275,
+      "Sophia King": 0.019642525997218767,
+      "Jamal Green": 0.015393138367186301
+    },
+    "expected_votes": {
+      "Paul Vallas": 0.14045327654148979,
+      "Brandon Johnson": 42.27610768930454,
+      "Lori Lightfoot": 1054.3448647373643,
+      "Chuy Garc\u00eda": 614.6786064376597,
+      "Willie Wilson": 368.199830298737,
+      "Kam Buckner": 26.22961343325073,
+      "Sophia King": 45.17780979360317,
+      "Jamal Green": 35.404218244528494
+    }
+  },
+  "Ward 21": {
+    "expected_turnout": 2900.0,
+    "turnout_share_pct": 0.022463206816421378,
+    "num_precincts": 29,
+    "vote_shares": {
+      "Paul Vallas": 5.46905961919575e-05,
+      "Brandon Johnson": 0.0010582478296642323,
+      "Lori Lightfoot": 0.6618130497904119,
+      "Chuy Garc\u00eda": 0.011790488894077257,
+      "Willie Wilson": 0.22786410763910184,
+      "Kam Buckner": 0.004153300526868179,
+      "Sophia King": 0.021693003165983445,
+      "Jamal Green": 0.01595808467501579
+    },
+    "expected_votes": {
+      "Paul Vallas": 0.15860272895667674,
+      "Brandon Johnson": 3.0689187060262735,
+      "Lori Lightfoot": 1919.2578443921946,
+      "Chuy Garc\u00eda": 34.192417792824045,
+      "Willie Wilson": 660.8059121533953,
+      "Kam Buckner": 12.044571527917718,
+      "Sophia King": 62.90970918135199,
+      "Jamal Green": 46.278445557545794
+    }
+  },
+  "Ward 22": {
+    "expected_turnout": 1900.0,
+    "turnout_share_pct": 0.01471727343144849,
+    "num_precincts": 19,
+    "vote_shares": {
+      "Paul Vallas": 7.801582941581553e-05,
+      "Brandon Johnson": 0.14600208419249147,
+      "Lori Lightfoot": 0.03979604668709727,
+      "Chuy Garc\u00eda": 0.5904079601373206,
+      "Willie Wilson": 0.048124823023550534,
+      "Kam Buckner": 0.0953810562775473,
+      "Sophia King": 0.0072047669639811445,
+      "Jamal Green": 0.008614182536495967
+    },
+    "expected_votes": {
+      "Paul Vallas": 0.14823007589004952,
+      "Brandon Johnson": 277.4039599657338,
+      "Lori Lightfoot": 75.61248870548481,
+      "Chuy Garc\u00eda": 1121.775124260909,
+      "Willie Wilson": 91.43716374474602,
+      "Kam Buckner": 181.22400692733987,
+      "Sophia King": 13.689057231564174,
+      "Jamal Green": 16.36694681934234
+    }
+  },
+  "Ward 23": {
+    "expected_turnout": 3300.0,
+    "turnout_share_pct": 0.025561580170410533,
+    "num_precincts": 33,
+    "vote_shares": {
+      "Paul Vallas": 0.21959316558683245,
+      "Brandon Johnson": 0.012211491853359058,
+      "Lori Lightfoot": 9.965490812603008e-05,
+      "Chuy Garc\u00eda": 0.5300499472587173,
+      "Willie Wilson": 0.1302426029079261,
+      "Kam Buckner": 0.008300335509405309,
+      "Sophia King": 0.021197610766567832,
+      "Jamal Green": 0.020267256956231872
+    },
+    "expected_votes": {
+      "Paul Vallas": 724.657446436547,
+      "Brandon Johnson": 40.297923116084895,
+      "Lori Lightfoot": 0.32886119681589926,
+      "Chuy Garc\u00eda": 1749.1648259537671,
+      "Willie Wilson": 429.80058959615616,
+      "Kam Buckner": 27.39110718103752,
+      "Sophia King": 69.95211552967385,
+      "Jamal Green": 66.88194795556518
+    }
+  },
+  "Ward 24": {
+    "expected_turnout": 2000.0,
+    "turnout_share_pct": 0.015491866769945779,
+    "num_precincts": 20,
+    "vote_shares": {
+      "Paul Vallas": 5.6041911480832747e-05,
+      "Brandon Johnson": 0.008529282262590204,
+      "Lori Lightfoot": 0.5516098374943447,
+      "Chuy Garc\u00eda": 0.16111100410235826,
+      "Willie Wilson": 0.18374892215103267,
+      "Kam Buckner": 0.007400483837426008,
+      "Sophia King": 0.020707110872337755,
+      "Jamal Green": 0.016202834753676242
+    },
+    "expected_votes": {
+      "Paul Vallas": 0.1120838229616655,
+      "Brandon Johnson": 17.058564525180408,
+      "Lori Lightfoot": 1103.2196749886893,
+      "Chuy Garc\u00eda": 322.22200820471653,
+      "Willie Wilson": 367.49784430206535,
+      "Kam Buckner": 14.800967674852016,
+      "Sophia King": 41.41422174467551,
+      "Jamal Green": 32.405669507352485
+    }
+  },
+  "Ward 25": {
+    "expected_turnout": 1700.0,
+    "turnout_share_pct": 0.013168086754453912,
+    "num_precincts": 17,
+    "vote_shares": {
+      "Paul Vallas": 0.018795676427490655,
+      "Brandon Johnson": 0.16612973065018255,
+      "Lori Lightfoot": 0.016806668634879837,
+      "Chuy Garc\u00eda": 0.5671227595131774,
+      "Willie Wilson": 0.023225861091471234,
+      "Kam Buckner": 0.12541276809617802,
+      "Sophia King": 0.007017587063931085,
+      "Jamal Green": 0.006772263729061559
+    },
+    "expected_votes": {
+      "Paul Vallas": 31.952649926734114,
+      "Brandon Johnson": 282.42054210531035,
+      "Lori Lightfoot": 28.571336679295722,
+      "Chuy Garc\u00eda": 964.1086911724016,
+      "Willie Wilson": 39.483963855501095,
+      "Kam Buckner": 213.20170576350262,
+      "Sophia King": 11.929898008682844,
+      "Jamal Green": 11.51284833940465
+    }
+  },
+  "Ward 26": {
+    "expected_turnout": 3200.0,
+    "turnout_share_pct": 0.024786986831913247,
+    "num_precincts": 32,
+    "vote_shares": {
+      "Paul Vallas": 9.770836138881897e-05,
+      "Brandon Johnson": 0.13603703310807916,
+      "Lori Lightfoot": 8.413172856216929e-05,
+      "Chuy Garc\u00eda": 0.6569907442911606,
+      "Willie Wilson": 0.019485951149049913,
+      "Kam Buckner": 0.10445801849426087,
+      "Sophia King": 0.0068488495477745425,
+      "Jamal Green": 0.007269904758729752
+    },
+    "expected_votes": {
+      "Paul Vallas": 0.3126667564442207,
+      "Brandon Johnson": 435.3185059458533,
+      "Lori Lightfoot": 0.2692215313989417,
+      "Chuy Garc\u00eda": 2102.3703817317137,
+      "Willie Wilson": 62.355043676959724,
+      "Kam Buckner": 334.26565918163476,
+      "Sophia King": 21.916318552878536,
+      "Jamal Green": 23.26369522793521
+    }
+  },
+  "Ward 27": {
+    "expected_turnout": 2900.0,
+    "turnout_share_pct": 0.022463206816421378,
+    "num_precincts": 29,
+    "vote_shares": {
+      "Paul Vallas": 0.18142840207380034,
+      "Brandon Johnson": 0.01127069031261472,
+      "Lori Lightfoot": 0.2929937019535091,
+      "Chuy Garc\u00eda": 0.20599115586394212,
+      "Willie Wilson": 0.1833541657197421,
+      "Kam Buckner": 0.013109931816262252,
+      "Sophia King": 0.03862634242362943,
+      "Jamal Green": 0.02682115438400582
+    },
+    "expected_votes": {
+      "Paul Vallas": 526.142366014021,
+      "Brandon Johnson": 32.68500190658269,
+      "Lori Lightfoot": 849.6817356651763,
+      "Chuy Garc\u00eda": 597.3743520054321,
+      "Willie Wilson": 531.7270805872521,
+      "Kam Buckner": 38.01880226716053,
+      "Sophia King": 112.01639302852536,
+      "Jamal Green": 77.78134771361688
+    }
+  },
+  "Ward 28": {
+    "expected_turnout": 2600.0,
+    "turnout_share_pct": 0.020139426800929512,
+    "num_precincts": 26,
+    "vote_shares": {
+      "Paul Vallas": 0.018550337764863558,
+      "Brandon Johnson": 0.009043799915555038,
+      "Lori Lightfoot": 0.5463391577811816,
+      "Chuy Garc\u00eda": 0.10588024499014158,
+      "Willie Wilson": 0.2168684773687671,
+      "Kam Buckner": 0.008253607877252317,
+      "Sophia King": 0.02558651491567177,
+      "Jamal Green": 0.01889113364564801
+    },
+    "expected_votes": {
+      "Paul Vallas": 48.23087818864525,
+      "Brandon Johnson": 23.513879780443098,
+      "Lori Lightfoot": 1420.4818102310721,
+      "Chuy Garc\u00eda": 275.2886369743681,
+      "Willie Wilson": 563.8580411587944,
+      "Kam Buckner": 21.459380480856026,
+      "Sophia King": 66.5249387807466,
+      "Jamal Green": 49.11694747868483
+    }
+  },
+  "Ward 29": {
+    "expected_turnout": 2400.0,
+    "turnout_share_pct": 0.018590240123934933,
+    "num_precincts": 24,
+    "vote_shares": {
+      "Paul Vallas": 0.07668112458037017,
+      "Brandon Johnson": 0.005501916804657601,
+      "Lori Lightfoot": 0.40266458420836254,
+      "Chuy Garc\u00eda": 0.1706049308728586,
+      "Willie Wilson": 0.23289745790257968,
+      "Kam Buckner": 0.009406723601278356,
+      "Sophia King": 0.030339879928838062,
+      "Jamal Green": 0.02514086867995808
+    },
+    "expected_votes": {
+      "Paul Vallas": 184.03469899288842,
+      "Brandon Johnson": 13.204600331178241,
+      "Lori Lightfoot": 966.3950021000701,
+      "Chuy Garc\u00eda": 409.45183409486066,
+      "Willie Wilson": 558.9538989661912,
+      "Kam Buckner": 22.576136643068054,
+      "Sophia King": 72.81571182921135,
+      "Jamal Green": 60.338084831899394
+    }
+  },
+  "Ward 30": {
+    "expected_turnout": 2600.0,
+    "turnout_share_pct": 0.020139426800929512,
+    "num_precincts": 26,
+    "vote_shares": {
+      "Paul Vallas": 0.054830143457298045,
+      "Brandon Johnson": 0.02926681295275151,
+      "Lori Lightfoot": 6.402377024891326e-05,
+      "Chuy Garc\u00eda": 0.6555140410865443,
+      "Willie Wilson": 0.13207725672076992,
+      "Kam Buckner": 0.02290939653427378,
+      "Sophia King": 0.03130397719637047,
+      "Jamal Green": 0.02533827633875261
+    },
+    "expected_votes": {
+      "Paul Vallas": 142.55837298897492,
+      "Brandon Johnson": 76.09371367715393,
+      "Lori Lightfoot": 0.16646180264717447,
+      "Chuy Garc\u00eda": 1704.3365068250152,
+      "Willie Wilson": 343.4008674740018,
+      "Kam Buckner": 59.56443098911183,
+      "Sophia King": 81.39034071056322,
+      "Jamal Green": 65.87951848075679
+    }
+  },
+  "Ward 31": {
+    "expected_turnout": 2300.0,
+    "turnout_share_pct": 0.017815646785437646,
+    "num_precincts": 23,
+    "vote_shares": {
+      "Paul Vallas": 8.98553328133393e-05,
+      "Brandon Johnson": 0.035244984605299255,
+      "Lori Lightfoot": 5.605209550504564e-05,
+      "Chuy Garc\u00eda": 0.7666232124872132,
+      "Willie Wilson": 0.09052865633473176,
+      "Kam Buckner": 0.020986359361832803,
+      "Sophia King": 0.017165646764468346,
+      "Jamal Green": 0.016168745664054504
+    },
+    "expected_votes": {
+      "Paul Vallas": 0.2066672654706804,
+      "Brandon Johnson": 81.06346459218828,
+      "Lori Lightfoot": 0.12891981966160498,
+      "Chuy Garc\u00eda": 1763.2333887205905,
+      "Willie Wilson": 208.21590956988302,
+      "Kam Buckner": 48.26862653221545,
+      "Sophia King": 39.48098755827719,
+      "Jamal Green": 37.18811502732536
+    }
+  },
+  "Ward 32": {
+    "expected_turnout": 3000.0,
+    "turnout_share_pct": 0.023237800154918668,
+    "num_precincts": 30,
+    "vote_shares": {
+      "Paul Vallas": 0.41838259403946004,
+      "Brandon Johnson": 0.020985247298039064,
+      "Lori Lightfoot": 0.00011131761713685878,
+      "Chuy Garc\u00eda": 0.2695143478710341,
+      "Willie Wilson": 0.1336880833654377,
+      "Kam Buckner": 0.01968220369198241,
+      "Sophia King": 0.052557492519640564,
+      "Jamal Green": 0.03370601729315718
+    },
+    "expected_votes": {
+      "Paul Vallas": 1255.14778211838,
+      "Brandon Johnson": 62.955741894117196,
+      "Lori Lightfoot": 0.33395285141057635,
+      "Chuy Garc\u00eda": 808.5430436131023,
+      "Willie Wilson": 401.06425009631306,
+      "Kam Buckner": 59.04661107594723,
+      "Sophia King": 157.67247755892168,
+      "Jamal Green": 101.11805187947154
+    }
+  },
+  "Ward 33": {
+    "expected_turnout": 1700.0,
+    "turnout_share_pct": 0.013168086754453912,
+    "num_precincts": 17,
+    "vote_shares": {
+      "Paul Vallas": 9.284528208288524e-05,
+      "Brandon Johnson": 0.09960722700064732,
+      "Lori Lightfoot": 6.600662862996817e-05,
+      "Chuy Garc\u00eda": 0.7210568148963069,
+      "Willie Wilson": 0.03390658102280557,
+      "Kam Buckner": 0.0601455281790632,
+      "Sophia King": 0.013094899373234324,
+      "Jamal Green": 0.010598664561824827
+    },
+    "expected_votes": {
+      "Paul Vallas": 0.15783697954090492,
+      "Brandon Johnson": 169.33228590110045,
+      "Lori Lightfoot": 0.11221126867094589,
+      "Chuy Garc\u00eda": 1225.7965853237217,
+      "Willie Wilson": 57.64118773876947,
+      "Kam Buckner": 102.24739790440744,
+      "Sophia King": 22.26132893449835,
+      "Jamal Green": 18.017729755102206
+    }
+  },
+  "Ward 34": {
+    "expected_turnout": 2000.0,
+    "turnout_share_pct": 0.015491866769945779,
+    "num_precincts": 20,
+    "vote_shares": {
+      "Paul Vallas": 0.4974723112850291,
+      "Brandon Johnson": 0.01817668273284353,
+      "Lori Lightfoot": 0.02268630967819795,
+      "Chuy Garc\u00eda": 0.16210361460390096,
+      "Willie Wilson": 0.14883028356297537,
+      "Kam Buckner": 0.01649213691929164,
+      "Sophia King": 0.04972617705440781,
+      "Jamal Green": 0.029719837484749573
+    },
+    "expected_votes": {
+      "Paul Vallas": 994.9446225700582,
+      "Brandon Johnson": 36.353365465687055,
+      "Lori Lightfoot": 45.3726193563959,
+      "Chuy Garc\u00eda": 324.2072292078019,
+      "Willie Wilson": 297.66056712595076,
+      "Kam Buckner": 32.98427383858328,
+      "Sophia King": 99.45235410881561,
+      "Jamal Green": 59.439674969499144
+    }
+  },
+  "Ward 35": {
+    "expected_turnout": 2200.0,
+    "turnout_share_pct": 0.017041053446940357,
+    "num_precincts": 22,
+    "vote_shares": {
+      "Paul Vallas": 8.440134845414527e-05,
+      "Brandon Johnson": 0.15204492289101598,
+      "Lori Lightfoot": 7.090450914132658e-05,
+      "Chuy Garc\u00eda": 0.6086650189564242,
+      "Willie Wilson": 0.01692848690472914,
+      "Kam Buckner": 0.1389804736568447,
+      "Sophia King": 0.00702788484852872,
+      "Jamal Green": 0.006826160997635205
+    },
+    "expected_votes": {
+      "Paul Vallas": 0.1856829665991196,
+      "Brandon Johnson": 334.49883036023516,
+      "Lori Lightfoot": 0.15598992011091847,
+      "Chuy Garc\u00eda": 1339.0630417041332,
+      "Willie Wilson": 37.2426711904041,
+      "Kam Buckner": 305.75704204505837,
+      "Sophia King": 15.461346666763184,
+      "Jamal Green": 15.017554194797452
+    }
+  },
+  "Ward 36": {
+    "expected_turnout": 2700.0,
+    "turnout_share_pct": 0.020914020139426802,
+    "num_precincts": 27,
+    "vote_shares": {
+      "Paul Vallas": 0.026566653207838138,
+      "Brandon Johnson": 0.05378824892520756,
+      "Lori Lightfoot": 0.00880582975240445,
+      "Chuy Garc\u00eda": 0.6680775723534751,
+      "Willie Wilson": 0.09491504942652404,
+      "Kam Buckner": 0.04926241043142902,
+      "Sophia King": 0.024165015536633108,
+      "Jamal Green": 0.020221597077101493
+    },
+    "expected_votes": {
+      "Paul Vallas": 71.72996366116297,
+      "Brandon Johnson": 145.22827209806042,
+      "Lori Lightfoot": 23.775740331492017,
+      "Chuy Garc\u00eda": 1803.8094453543827,
+      "Willie Wilson": 256.2706334516149,
+      "Kam Buckner": 133.00850816485834,
+      "Sophia King": 65.24554194890939,
+      "Jamal Green": 54.59831210817403
+    }
+  },
+  "Ward 37": {
+    "expected_turnout": 2200.0,
+    "turnout_share_pct": 0.017041053446940357,
+    "num_precincts": 22,
+    "vote_shares": {
+      "Paul Vallas": 0.00010976022676502464,
+      "Brandon Johnson": 0.003786925991084042,
+      "Lori Lightfoot": 0.45346450621505785,
+      "Chuy Garc\u00eda": 0.23427199830006123,
+      "Willie Wilson": 0.21302471500312634,
+      "Kam Buckner": 0.006936028635949856,
+      "Sophia King": 0.023232328729435484,
+      "Jamal Green": 0.02053535930725326
+    },
+    "expected_votes": {
+      "Paul Vallas": 0.2414724988830542,
+      "Brandon Johnson": 8.331237180384893,
+      "Lori Lightfoot": 997.6219136731273,
+      "Chuy Garc\u00eda": 515.3983962601347,
+      "Willie Wilson": 468.65437300687796,
+      "Kam Buckner": 15.259262999089682,
+      "Sophia King": 51.111123204758066,
+      "Jamal Green": 45.177790475957174
+    }
+  },
+  "Ward 38": {
+    "expected_turnout": 2500.0,
+    "turnout_share_pct": 0.019364833462432222,
+    "num_precincts": 25,
+    "vote_shares": {
+      "Paul Vallas": 0.6208890085944626,
+      "Brandon Johnson": 0.0042564036198490226,
+      "Lori Lightfoot": 7.834396559006939e-05,
+      "Chuy Garc\u00eda": 0.08091631708891411,
+      "Willie Wilson": 0.164935225219448,
+      "Kam Buckner": 0.008206461541106342,
+      "Sophia King": 0.03338359500380967,
+      "Jamal Green": 0.025364156311097206
+    },
+    "expected_votes": {
+      "Paul Vallas": 1552.2225214861564,
+      "Brandon Johnson": 10.641009049622557,
+      "Lori Lightfoot": 0.19585991397517347,
+      "Chuy Garc\u00eda": 202.2907927222853,
+      "Willie Wilson": 412.33806304862003,
+      "Kam Buckner": 20.516153852765854,
+      "Sophia King": 83.45898750952418,
+      "Jamal Green": 63.41039077774302
+    }
+  },
+  "Ward 39": {
+    "expected_turnout": 3500.0,
+    "turnout_share_pct": 0.027110766847405113,
+    "num_precincts": 35,
+    "vote_shares": {
+      "Paul Vallas": 0.3696179905731581,
+      "Brandon Johnson": 0.017249646165385116,
+      "Lori Lightfoot": 0.0007319123876616179,
+      "Chuy Garc\u00eda": 0.31837211631271034,
+      "Willie Wilson": 0.15447303601920498,
+      "Kam Buckner": 0.018382208949310277,
+      "Sophia King": 0.03909944549600919,
+      "Jamal Green": 0.02530834859997718
+    },
+    "expected_votes": {
+      "Paul Vallas": 1293.6629670060533,
+      "Brandon Johnson": 60.373761578847905,
+      "Lori Lightfoot": 2.561693356815663,
+      "Chuy Garc\u00eda": 1114.3024070944862,
+      "Willie Wilson": 540.6556260672174,
+      "Kam Buckner": 64.33773132258597,
+      "Sophia King": 136.84805923603216,
+      "Jamal Green": 88.57922009992014
+    }
+  },
+  "Ward 40": {
+    "expected_turnout": 2300.0,
+    "turnout_share_pct": 0.017815646785437646,
+    "num_precincts": 23,
+    "vote_shares": {
+      "Paul Vallas": 5.852444264839275e-05,
+      "Brandon Johnson": 0.0646150640347463,
+      "Lori Lightfoot": 0.02106310997835624,
+      "Chuy Garc\u00eda": 0.6595677082346091,
+      "Willie Wilson": 0.09045728860331405,
+      "Kam Buckner": 0.0645790754850338,
+      "Sophia King": 0.02973662192656199,
+      "Jamal Green": 0.019931248677760423
+    },
+    "expected_votes": {
+      "Paul Vallas": 0.13460621809130333,
+      "Brandon Johnson": 148.61464727991648,
+      "Lori Lightfoot": 48.44515295021935,
+      "Chuy Garc\u00eda": 1517.0057289396009,
+      "Willie Wilson": 208.05176378762232,
+      "Kam Buckner": 148.53187361557775,
+      "Sophia King": 68.39423043109258,
+      "Jamal Green": 45.84187195884897
+    }
+  },
+  "Ward 41": {
+    "expected_turnout": 3100.0,
+    "turnout_share_pct": 0.024012393493415957,
+    "num_precincts": 31,
+    "vote_shares": {
+      "Paul Vallas": 0.7784421034676361,
+      "Brandon Johnson": 0.0002806738526564648,
+      "Lori Lightfoot": 0.0001505737482711169,
+      "Chuy Garc\u00eda": 0.0001300840283849931,
+      "Willie Wilson": 0.1040040151292287,
+      "Kam Buckner": 0.002635607654519357,
+      "Sophia King": 0.024631327090460356,
+      "Jamal Green": 0.016779367612081517
+    },
+    "expected_votes": {
+      "Paul Vallas": 2413.170520749672,
+      "Brandon Johnson": 0.8700889432350409,
+      "Lori Lightfoot": 0.4667786196404624,
+      "Chuy Garc\u00eda": 0.4032604879934786,
+      "Willie Wilson": 322.412446900609,
+      "Kam Buckner": 8.170383729010007,
+      "Sophia King": 76.3571139804271,
+      "Jamal Green": 52.0160395974527
+    }
+  },
+  "Ward 42": {
+    "expected_turnout": 2400.0,
+    "turnout_share_pct": 0.018590240123934933,
+    "num_precincts": 24,
+    "vote_shares": {
+      "Paul Vallas": 0.7680410771574402,
+      "Brandon Johnson": 0.0012332437926808855,
+      "Lori Lightfoot": 0.00034619632235456633,
+      "Chuy Garc\u00eda": 0.012415051989032904,
+      "Willie Wilson": 0.09627684162811222,
+      "Kam Buckner": 0.0036244672456255097,
+      "Sophia King": 0.029162122844144503,
+      "Jamal Green": 0.017463969345491766
+    },
+    "expected_votes": {
+      "Paul Vallas": 1843.2985851778565,
+      "Brandon Johnson": 2.9597851024341253,
+      "Lori Lightfoot": 0.8308711736509592,
+      "Chuy Garc\u00eda": 29.79612477367897,
+      "Willie Wilson": 231.06441990746933,
+      "Kam Buckner": 8.698721389501223,
+      "Sophia King": 69.98909482594681,
+      "Jamal Green": 41.91352642918024
+    }
+  },
+  "Ward 43": {
+    "expected_turnout": 2300.0,
+    "turnout_share_pct": 0.017815646785437646,
+    "num_precincts": 23,
+    "vote_shares": {
+      "Paul Vallas": 0.796033521193933,
+      "Brandon Johnson": 0.0015317132876828349,
+      "Lori Lightfoot": 0.00011547114609453399,
+      "Chuy Garc\u00eda": 0.008484977999507955,
+      "Willie Wilson": 0.07216266307231556,
+      "Kam Buckner": 0.004478660977348581,
+      "Sophia King": 0.028052129015824746,
+      "Jamal Green": 0.019328235898236394
+    },
+    "expected_votes": {
+      "Paul Vallas": 1830.877098746046,
+      "Brandon Johnson": 3.52294056167052,
+      "Lori Lightfoot": 0.2655836360174282,
+      "Chuy Garc\u00eda": 19.515449398868295,
+      "Willie Wilson": 165.9741250663258,
+      "Kam Buckner": 10.300920247901736,
+      "Sophia King": 64.51989673639692,
+      "Jamal Green": 44.4549425659437
+    }
+  },
+  "Ward 44": {
+    "expected_turnout": 2100.0,
+    "turnout_share_pct": 0.016266460108443067,
+    "num_precincts": 21,
+    "vote_shares": {
+      "Paul Vallas": 0.3410066949461438,
+      "Brandon Johnson": 0.04529346056655143,
+      "Lori Lightfoot": 0.004013466028723693,
+      "Chuy Garc\u00eda": 0.31847479816399954,
+      "Willie Wilson": 0.11820129376501115,
+      "Kam Buckner": 0.025164971105009346,
+      "Sophia King": 0.056759310652544484,
+      "Jamal Green": 0.042878573178481996
+    },
+    "expected_votes": {
+      "Paul Vallas": 716.1140593869019,
+      "Brandon Johnson": 95.116267189758,
+      "Lori Lightfoot": 8.428278660319755,
+      "Chuy Garc\u00eda": 668.797076144399,
+      "Willie Wilson": 248.2227169065234,
+      "Kam Buckner": 52.84643932051963,
+      "Sophia King": 119.19455237034342,
+      "Jamal Green": 90.0450036748122
+    }
+  },
+  "Ward 45": {
+    "expected_turnout": 2900.0,
+    "turnout_share_pct": 0.022463206816421378,
+    "num_precincts": 29,
+    "vote_shares": {
+      "Paul Vallas": 0.48825567548842735,
+      "Brandon Johnson": 0.008915208057184383,
+      "Lori Lightfoot": 7.52408875366452e-05,
+      "Chuy Garc\u00eda": 0.1983903328803114,
+      "Willie Wilson": 0.16542400401783303,
+      "Kam Buckner": 0.012875261200080099,
+      "Sophia King": 0.041174772559230584,
+      "Jamal Green": 0.028633109828217602
+    },
+    "expected_votes": {
+      "Paul Vallas": 1415.9414589164394,
+      "Brandon Johnson": 25.85410336583471,
+      "Lori Lightfoot": 0.2181985738562711,
+      "Chuy Garc\u00eda": 575.3319653529031,
+      "Willie Wilson": 479.7296116517158,
+      "Kam Buckner": 37.338257480232286,
+      "Sophia King": 119.40684042176869,
+      "Jamal Green": 83.03601850183105
+    }
+  },
+  "Ward 46": {
+    "expected_turnout": 2300.0,
+    "turnout_share_pct": 0.017815646785437646,
+    "num_precincts": 23,
+    "vote_shares": {
+      "Paul Vallas": 0.16051446507393552,
+      "Brandon Johnson": 0.062220546774509444,
+      "Lori Lightfoot": 0.06428795688617168,
+      "Chuy Garc\u00eda": 0.46770265573747843,
+      "Willie Wilson": 0.09905361639068588,
+      "Kam Buckner": 0.03393033200275658,
+      "Sophia King": 0.037660316112136126,
+      "Jamal Green": 0.026168968363091225
+    },
+    "expected_votes": {
+      "Paul Vallas": 369.1832696700517,
+      "Brandon Johnson": 143.10725758137173,
+      "Lori Lightfoot": 147.86230083819487,
+      "Chuy Garc\u00eda": 1075.7161081962004,
+      "Willie Wilson": 227.82331769857754,
+      "Kam Buckner": 78.03976360634013,
+      "Sophia King": 86.61872705791309,
+      "Jamal Green": 60.18862723510982
+    }
+  },
+  "Ward 47": {
+    "expected_turnout": 2800.0,
+    "turnout_share_pct": 0.021688613477924088,
+    "num_precincts": 28,
+    "vote_shares": {
+      "Paul Vallas": 0.11862790446480584,
+      "Brandon Johnson": 0.06778876845238774,
+      "Lori Lightfoot": 6.995571965271054e-05,
+      "Chuy Garc\u00eda": 0.5450646059609694,
+      "Willie Wilson": 0.0824741479566463,
+      "Kam Buckner": 0.0660205453165732,
+      "Sophia King": 0.04085413558923295,
+      "Jamal Green": 0.02726001612239486
+    },
+    "expected_votes": {
+      "Paul Vallas": 332.15813250145635,
+      "Brandon Johnson": 189.80855166668567,
+      "Lori Lightfoot": 0.19587601502758953,
+      "Chuy Garc\u00eda": 1526.1808966907142,
+      "Willie Wilson": 230.92761427860964,
+      "Kam Buckner": 184.85752688640497,
+      "Sophia King": 114.39157964985225,
+      "Jamal Green": 76.3280451427056
+    }
+  },
+  "Ward 48": {
+    "expected_turnout": 3500.0,
+    "turnout_share_pct": 0.027110766847405113,
+    "num_precincts": 35,
+    "vote_shares": {
+      "Paul Vallas": 0.15622306292291657,
+      "Brandon Johnson": 0.06745947620872322,
+      "Lori Lightfoot": 0.04791936718091873,
+      "Chuy Garc\u00eda": 0.4520243248712145,
+      "Willie Wilson": 0.11193550175580853,
+      "Kam Buckner": 0.05338396929078338,
+      "Sophia King": 0.035949310527051144,
+      "Jamal Green": 0.023894603800122018
+    },
+    "expected_votes": {
+      "Paul Vallas": 546.780720230208,
+      "Brandon Johnson": 236.10816673053128,
+      "Lori Lightfoot": 167.71778513321556,
+      "Chuy Garc\u00eda": 1582.0851370492508,
+      "Willie Wilson": 391.77425614532984,
+      "Kam Buckner": 186.84389251774184,
+      "Sophia King": 125.82258684467901,
+      "Jamal Green": 83.63111330042706
+    }
+  },
+  "Ward 49": {
+    "expected_turnout": 1700.0,
+    "turnout_share_pct": 0.013168086754453912,
+    "num_precincts": 17,
+    "vote_shares": {
+      "Paul Vallas": 0.00010301443146014477,
+      "Brandon Johnson": 0.11789156822943783,
+      "Lori Lightfoot": 0.05549962193500047,
+      "Chuy Garc\u00eda": 0.622290935770197,
+      "Willie Wilson": 0.03639957246520576,
+      "Kam Buckner": 0.08129099966746334,
+      "Sophia King": 0.014713703679864368,
+      "Jamal Green": 0.011339766782141958
+    },
+    "expected_votes": {
+      "Paul Vallas": 0.1751245334822461,
+      "Brandon Johnson": 200.41566599004432,
+      "Lori Lightfoot": 94.3493572895008,
+      "Chuy Garc\u00eda": 1057.8945908093349,
+      "Willie Wilson": 61.879273190849794,
+      "Kam Buckner": 138.19469943468766,
+      "Sophia King": 25.013296255769426,
+      "Jamal Green": 19.27760352964133
+    }
+  },
+  "Ward 50": {
+    "expected_turnout": 2800.0,
+    "turnout_share_pct": 0.021688613477924088,
+    "num_precincts": 28,
+    "vote_shares": {
+      "Paul Vallas": 0.4627910687595222,
+      "Brandon Johnson": 0.010887389629968028,
+      "Lori Lightfoot": 0.02173487175270967,
+      "Chuy Garc\u00eda": 0.23889859470966776,
+      "Willie Wilson": 0.14297295445451536,
+      "Kam Buckner": 0.012668447488034218,
+      "Sophia King": 0.030677235431108982,
+      "Jamal Green": 0.01973920566044999
+    },
+    "expected_votes": {
+      "Paul Vallas": 1295.814992526662,
+      "Brandon Johnson": 30.484690963910477,
+      "Lori Lightfoot": 60.85764090758708,
+      "Chuy Garc\u00eda": 668.9160651870698,
+      "Willie Wilson": 400.324272472643,
+      "Kam Buckner": 35.47165296649581,
+      "Sophia King": 85.89625920710515,
+      "Jamal Green": 55.26977584925997
+    }
+  }
+}

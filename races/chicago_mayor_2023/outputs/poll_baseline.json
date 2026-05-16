@@ -1,0 +1,208 @@
+{
+  "current": {
+    "baseline": {
+      "Paul Vallas": 0.26608384668762813,
+      "Brandon Johnson": 0.17396036359182052,
+      "Lori Lightfoot": 0.16621607337970182,
+      "Chuy Garc\u00eda": 0.1411757462947025,
+      "Willie Wilson": 0.08177098010973256,
+      "Kam Buckner": 0.00630078040114081,
+      "Sophia King": 0.007756405362110225,
+      "Jamal Green": 0.006391489794821752
+    },
+    "undecided_total": 0.15034431437834173,
+    "senate_district_crosstabs": {},
+    "demographic_crosstabs": {
+      "white": {
+        "Paul Vallas": 0.4046690224945939,
+        "Brandon Johnson": 0.16327704406061236,
+        "Lori Lightfoot": 0.14917732878875833,
+        "Chuy Garc\u00eda": 0.08738929728725388,
+        "Willie Wilson": 0.03444381048661344,
+        "Kam Buckner": 0.007010001711843374,
+        "Sophia King": 0.003866879211994615,
+        "Jamal Green": 0.0
+      },
+      "black": {
+        "Paul Vallas": 0.16127248275404293,
+        "Brandon Johnson": 0.17671904957079002,
+        "Lori Lightfoot": 0.2217724732329658,
+        "Chuy Garc\u00eda": 0.03600081842899558,
+        "Willie Wilson": 0.185592024757617,
+        "Kam Buckner": 0.007450589416113962,
+        "Sophia King": 0.027896519915236687,
+        "Jamal Green": 0.03623366819319584
+      },
+      "hispanic": {
+        "Paul Vallas": 0.18017604358056483,
+        "Brandon Johnson": 0.15424649214268385,
+        "Lori Lightfoot": 0.12969211248353557,
+        "Chuy Garc\u00eda": 0.38755514748372083,
+        "Willie Wilson": 0.028938171620136857,
+        "Kam Buckner": 0.0,
+        "Sophia King": 0.0,
+        "Jamal Green": 0.0
+      },
+      "asian": {
+        "Lori Lightfoot": 0.24621607337970183,
+        "Willie Wilson": 0.12177098010973257
+      },
+      "age_18_30": {
+        "Paul Vallas": 0.20097986446728505,
+        "Brandon Johnson": 0.17056674220804757,
+        "Lori Lightfoot": 0.1772564277201014,
+        "Chuy Garc\u00eda": 0.1728839620761569,
+        "Willie Wilson": 0.053133798286177814,
+        "Kam Buckner": 0.010050314583274805,
+        "Sophia King": 0.0,
+        "Jamal Green": 0.020446420402562615
+      },
+      "age_31_45": {
+        "Paul Vallas": 0.25833351567152024,
+        "Brandon Johnson": 0.20909865568068953,
+        "Lori Lightfoot": 0.15217710173973595,
+        "Chuy Garc\u00eda": 0.15628221989051122,
+        "Willie Wilson": 0.053847137241779794,
+        "Kam Buckner": 0.010428790117374416,
+        "Sophia King": 0.021295053522033047,
+        "Jamal Green": 0.010831337555064506
+      },
+      "age_46_64": {
+        "Paul Vallas": 0.27611322071551414,
+        "Brandon Johnson": 0.1488816319826075,
+        "Lori Lightfoot": 0.15497560880594946,
+        "Chuy Garc\u00eda": 0.14549976144485458,
+        "Willie Wilson": 0.10625379667036552,
+        "Kam Buckner": 0.0,
+        "Sophia King": 0.00904756956425462,
+        "Jamal Green": 0.0022560956263471803
+      },
+      "age_65_plus": {
+        "Paul Vallas": 0.29225997171298834,
+        "Brandon Johnson": 0.15724789102581596,
+        "Lori Lightfoot": 0.18951046263535495,
+        "Chuy Garc\u00eda": 0.1181515828297921,
+        "Willie Wilson": 0.07988808350836839,
+        "Kam Buckner": 0.002030567855281486,
+        "Sophia King": 0.0040008031189748714,
+        "Jamal Green": 0.0021387673126994763
+      },
+      "female": {
+        "Paul Vallas": 0.2741937261307993,
+        "Brandon Johnson": 0.16999746618758807,
+        "Lori Lightfoot": 0.18824941916491097,
+        "Chuy Garc\u00eda": 0.14428691006178707,
+        "Willie Wilson": 0.06507541507406128,
+        "Kam Buckner": 0.00281810952305822,
+        "Sophia King": 0.009683867727085212,
+        "Jamal Green": 0.007292597000747838
+      },
+      "male": {
+        "Paul Vallas": 0.2612351660180039,
+        "Brandon Johnson": 0.17970410138354456,
+        "Lori Lightfoot": 0.13317667984174403,
+        "Chuy Garc\u00eda": 0.13632300565224903,
+        "Willie Wilson": 0.0997709067446938,
+        "Kam Buckner": 0.009553496720028132,
+        "Sophia King": 0.00572831083400567,
+        "Jamal Green": 0.007272603391050606
+      },
+      "progressive": {
+        "Paul Vallas": 0.15996477843639534,
+        "Brandon Johnson": 0.2138707325921106,
+        "Lori Lightfoot": 0.24873848112962932,
+        "Chuy Garc\u00eda": 0.1731757462947025,
+        "Willie Wilson": 0.025689038234188673,
+        "Kam Buckner": 0.009517168776249588,
+        "Sophia King": 0.01049520148714648,
+        "Jamal Green": 0.014391489794821752
+      },
+      "moderate": {
+        "Paul Vallas": 0.31365106993741054,
+        "Brandon Johnson": 0.15104999459153046,
+        "Lori Lightfoot": 0.11578329662948425,
+        "Chuy Garc\u00eda": 0.13722056179455747,
+        "Willie Wilson": 0.1256365336101677,
+        "Kam Buckner": 0.002300780401140811,
+        "Sophia King": 0.004666774362400293,
+        "Jamal Green": 0.0
+      },
+      "conservative": {
+        "Paul Vallas": 0.5280223336942997,
+        "Brandon Johnson": 0.1011319364670743,
+        "Lori Lightfoot": 0.024596345505898343,
+        "Chuy Garc\u00eda": 0.01147407654535515,
+        "Willie Wilson": 0.12763653361016764,
+        "Kam Buckner": 0.01569643077566945,
+        "Sophia King": 0.008988171985551104,
+        "Jamal Green": 0.010391489794821752
+      },
+      "age_45_59": {
+        "Paul Vallas": 0.2540838466876282,
+        "Brandon Johnson": 0.1599603635918205,
+        "Lori Lightfoot": 0.1602160733797018,
+        "Chuy Garc\u00eda": 0.15017574629470248,
+        "Willie Wilson": 0.11077098010973255,
+        "Kam Buckner": 0.00630078040114081,
+        "Sophia King": 0.003756405362110221
+      },
+      "age_60_plus": {
+        "Paul Vallas": 0.3030838466876281,
+        "Brandon Johnson": 0.17796036359182052,
+        "Lori Lightfoot": 0.17621607337970183,
+        "Chuy Garc\u00eda": 0.1031757462947025,
+        "Willie Wilson": 0.07577098010973254,
+        "Kam Buckner": 0.007300780401140811,
+        "Sophia King": 0.006756405362110224
+      }
+    },
+    "favorability_topline": {
+      "Paul Vallas": {
+        "favorable": 0.39619313296720665,
+        "unfavorable": 0.27608327793961374,
+        "aware_rate": 1.1325337690818293
+      },
+      "Brandon Johnson": {
+        "favorable": 0.22668394579943876,
+        "unfavorable": 0.129533683313965,
+        "aware_rate": 1.2229183008087212
+      },
+      "Lori Lightfoot": {
+        "favorable": 0.2314015798175775,
+        "unfavorable": 0.7198140602561517,
+        "aware_rate": 0.46749764400776134
+      },
+      "Chuy Garc\u00eda": {
+        "favorable": 0.42913062681751063,
+        "unfavorable": 0.3293862549582142,
+        "aware_rate": 1.0872172874263668
+      },
+      "Willie Wilson": {
+        "favorable": 5.7825926015303035e-05,
+        "unfavorable": 3.42235072335467e-05,
+        "aware_rate": 1.2072398610547634
+      },
+      "Kam Buckner": {
+        "favorable": 0.0,
+        "unfavorable": 0.0,
+        "aware_rate": 0.9608643792068525
+      },
+      "Sophia King": {
+        "favorable": 0.0,
+        "unfavorable": 0.0,
+        "aware_rate": 0.9608643792068525
+      },
+      "Jamal Green": {
+        "favorable": 0.0,
+        "unfavorable": 0.0,
+        "aware_rate": 0.9608643792068525
+      }
+    },
+    "second_choice": {},
+    "ideology_composition": {},
+    "as_of": "2026-05-16",
+    "n_polls_used": 21
+  },
+  "last_run": "2026-05-16",
+  "n_simulations": 1000000
+}
